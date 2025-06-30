@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkillSprint API Test</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        h1 {
+            color: #4f46e5;
+        }
+        button {
+            background: #4f46e5;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        button:hover {
+            background: #4338ca;
+        }
+        #results {
+            background: #f5f5f5;
+            padding: 15px;
+            border-radius: 4px;
+            margin-top: 20px;
+            white-space: pre-wrap;
+            overflow: auto;
+            max-height: 400px;
+        }
+        .error {
+            color: #dc2626;
+        }
+    </style>
+</head>
+<body>
+    <h1>SkillSprint API Test</h1>
+    <p>This page tests connectivity to the SkillSprint API.</p>
+    
+    <div>
+        <button id="testBackend">Test Backend</button>
+        <button id="testSkills">Get Skills</button>
+        <button id="testLogin">Test Login</button>
+        <button id="clearResults">Clear Results</button>
+    </div>
+    
+    <div id="results">Results will appear here...</div>
+    
+    <script>
+        const resultsElement = document.getElementById('results');
+        
+        function logResult(message, isError = false) {
+            const timestamp = new Date().toLocaleTimeString();
+            const entry = document.createElement('div');
+            entry.textContent = `[${timestamp}] ${message}`;
+            if (isError) {
+                entry.classList.add('error');
+            }
+            resultsElement.appendChild(entry);
+            resultsElement.scrollTop = resultsElement.scrollHeight;
+        }
+        
+        document.getElementById('testBackend').addEventListener('click', async () => {
+            try {
+                logResult('Testing backend connectivity...');
+                const response = await fetch('http://localhost:8000/');
+                const data = await response.text();
+                logResult(`Backend responded with status: ${response.status}`);
+                logResult(`Response: ${data}`);
+            } catch (error) {
+                logResult(`Error connecting to backend: ${error.message}`, true);
+            }
+        });
+        
+        document.getElementById('testSkills').addEventListener('click', async () => {
+            try {
+                logResult('Fetching skills from API...');
+                const response = await fetch('http://localhost:8000/skills');
+                const data = await response.json();
+                logResult(`Skills API responded with status: ${response.status}`);
+                logResult(`Found ${data.length} skills`);
+                logResult('First few skills: ' + JSON.stringify(data.slice(0, 3), null, 2));
+            } catch (error) {
+                logResult(`Error fetching skills: ${error.message}`, true);
+            }
+        });
+        
+        document.getElementById('testLogin').addEventListener('click', async () => {
+            try {
+                logResult('Testing login with test user...');
+                
+                const formData = new FormData();
+                formData.append('username', 'testuser');
+                formData.append('password', 'password123');
+                
+                const response = await fetch('http://localhost:8000/auth/token', {
+                    method: 'POST',
+                    body: formData
+                });
+                
+                if (response.ok) {
+                    const data = await response.json();
+                    logResult('Login successful!');
+                    logResult(`Token: ${data.access_token.substring(0, 20)}...`);
+                } else {
+                    const errorData = await response.json();
+                    logResult(`Login failed with status ${response.status}`, true);
+                    logResult(`Error: ${JSON.stringify(errorData)}`, true);
+                }
+            } catch (error) {
+                logResult(`Error during login: ${error.message}`, true);
+            }
+        });
+        
+        document.getElementById('clearResults').addEventListener('click', () => {
+            resultsElement.innerHTML = 'Results cleared...';
+        });
+    </script>
+</body>
+</html>
