@@ -25,14 +25,28 @@ FAST_FALLBACK_RESOURCES = {
             "title": "Array Algorithms Visualization",
             "url": "https://www.cs.usfca.edu/~galles/visualization/Array.html",
             "description": "Interactive visualization of array operations",
-            "resource_type": "article",
+            "resource_type": "tutorial",
             "quality_score": 88
         },
         {
-            "title": "Two Pointer Technique for Arrays",
-            "url": "https://www.geeksforgeeks.org/two-pointers-technique/",
-            "description": "Master the two-pointer technique for array problems",
-            "resource_type": "article",
+            "title": "Array Data Structure - MDN Documentation",
+            "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array",
+            "description": "Complete JavaScript Array documentation with examples",
+            "resource_type": "documentation",
+            "quality_score": 95
+        },
+        {
+            "title": "Array Algorithms Tutorial - YouTube",
+            "url": "https://www.youtube.com/watch?v=QJNwK2uJyGs",
+            "description": "Comprehensive video tutorial on array algorithms and techniques",
+            "resource_type": "video",
+            "quality_score": 87
+        },
+        {
+            "title": "Awesome Array Algorithms - GitHub",
+            "url": "https://github.com/TheAlgorithms/Python/tree/master/data_structures/arrays",
+            "description": "Collection of array algorithm implementations in Python",
+            "resource_type": "github",
             "quality_score": 85
         }
     ],
@@ -45,13 +59,6 @@ FAST_FALLBACK_RESOURCES = {
             "quality_score": 92
         },
         {
-            "title": "Linked List Visualization",
-            "url": "https://www.cs.usfca.edu/~galles/visualization/LinkedList.html",
-            "description": "Interactive linked list operations visualization",
-            "resource_type": "article",
-            "quality_score": 90
-        },
-        {
             "title": "Linked List Problems - LeetCode",
             "url": "https://leetcode.com/tag/linked-list/",
             "description": "Practice linked list problems with step-by-step solutions",
@@ -59,11 +66,32 @@ FAST_FALLBACK_RESOURCES = {
             "quality_score": 88
         },
         {
-            "title": "Fast and Slow Pointer Technique",
-            "url": "https://www.geeksforgeeks.org/detect-loop-in-a-linked-list/",
-            "description": "Learn cycle detection and other linked list patterns",
-            "resource_type": "article",
-            "quality_score": 85
+            "title": "Linked List Visualization",
+            "url": "https://www.cs.usfca.edu/~galles/visualization/LinkedList.html",
+            "description": "Interactive linked list operations visualization",
+            "resource_type": "tutorial",
+            "quality_score": 90
+        },
+        {
+            "title": "Linked Lists - CS50 Documentation",
+            "url": "https://cs50.harvard.edu/x/2023/notes/5/",
+            "description": "Harvard CS50 comprehensive notes on linked lists",
+            "resource_type": "documentation",
+            "quality_score": 94
+        },
+        {
+            "title": "Linked List Masterclass - YouTube",
+            "url": "https://www.youtube.com/watch?v=WwfhLC16bis",
+            "description": "Complete linked list tutorial with coding examples",
+            "resource_type": "video",
+            "quality_score": 86
+        },
+        {
+            "title": "Linked List Implementations - GitHub",
+            "url": "https://github.com/TheAlgorithms/Python/tree/master/data_structures/linked_list",
+            "description": "Various linked list implementations and algorithms",
+            "resource_type": "github",
+            "quality_score": 84
         }
     ],
     "Binary Trees": [
@@ -75,25 +103,39 @@ FAST_FALLBACK_RESOURCES = {
             "quality_score": 92
         },
         {
+            "title": "Binary Tree Problems - LeetCode",
+            "url": "https://leetcode.com/tag/binary-tree/",
+            "description": "Practice binary tree problems with solutions",
+            "resource_type": "course",
+            "quality_score": 89
+        },
+        {
             "title": "Tree Traversal Visualization",
             "url": "https://www.cs.usfca.edu/~galles/visualization/BinTree.html",
             "description": "Interactive binary tree traversal visualization",
-            "resource_type": "article",
-            "quality_score": 90
-        },
-        {
-            "title": "Binary Tree Problems - LeetCode",
-            "url": "https://leetcode.com/tag/tree/",
-            "description": "Practice tree problems with detailed explanations",
-            "resource_type": "course",
+            "resource_type": "tutorial",
             "quality_score": 88
         },
         {
-            "title": "Tree Algorithms Patterns",
-            "url": "https://www.geeksforgeeks.org/binary-tree-set-1-introduction/",
-            "description": "Common patterns and techniques for tree problems",
-            "resource_type": "article",
+            "title": "Trees - Algorithm Design Manual",
+            "url": "https://www3.cs.stonybrook.edu/~skiena/214/lectures/lect10/lect10.html",
+            "description": "Academic documentation on tree data structures",
+            "resource_type": "documentation",
+            "quality_score": 93
+        },
+        {
+            "title": "Binary Trees Explained - YouTube",
+            "url": "https://www.youtube.com/watch?v=H5JubkIy_p8",
+            "description": "Visual explanation of binary trees and operations",
+            "resource_type": "video",
             "quality_score": 85
+        },
+        {
+            "title": "Binary Tree Algorithms - GitHub",
+            "url": "https://github.com/TheAlgorithms/Python/tree/master/data_structures/binary_tree",
+            "description": "Binary tree algorithm implementations",
+            "resource_type": "github",
+            "quality_score": 83
         }
     ],
     "Binary Search Trees": [
@@ -456,62 +498,242 @@ FAST_FALLBACK_RESOURCES = {
             "quality_score": 85
         }
     ],
-    "Sorting Algorithms": [
+    "Dynamic Programming": [
         {
-            "title": "Sorting Algorithms Complete Guide",
-            "url": "https://www.geeksforgeeks.org/sorting-algorithms/",
-            "description": "All sorting algorithms with time complexity analysis",
+            "title": "Dynamic Programming Complete Guide",
+            "url": "https://www.geeksforgeeks.org/dynamic-programming/",
+            "description": "Master dynamic programming with patterns",
             "resource_type": "article",
             "quality_score": 92
         },
         {
-            "title": "Sorting Visualization",
-            "url": "https://www.cs.usfca.edu/~galles/visualization/ComparisonSort.html",
-            "description": "Interactive sorting algorithm visualization",
+            "title": "DP Patterns for Coding Interviews",
+            "url": "https://leetcode.com/discuss/general-discussion/458695/dynamic-programming-patterns",
+            "description": "Common DP patterns and when to use them",
             "resource_type": "article",
             "quality_score": 90
         },
         {
-            "title": "Quick Sort vs Merge Sort",
-            "url": "https://www.programiz.com/dsa/merge-sort",
-            "description": "Compare and understand divide-and-conquer sorting",
+            "title": "Dynamic Programming - LeetCode",
+            "url": "https://leetcode.com/tag/dynamic-programming/",
+            "description": "Practice DP problems with detailed solutions",
             "resource_type": "course",
             "quality_score": 88
         },
         {
-            "title": "Heap Sort Implementation",
-            "url": "https://www.geeksforgeeks.org/heap-sort/",
-            "description": "Learn heap sort with heap data structure",
+            "title": "DP Optimization Techniques",
+            "url": "https://www.geeksforgeeks.org/overlapping-subproblems-property/",
+            "description": "Learn memoization and tabulation",
+            "resource_type": "article",
+            "quality_score": 85
+        }
+    ],
+    "Sorting Algorithms": [
+        {
+            "title": "Sorting Algorithms Complete Guide",
+            "url": "https://www.geeksforgeeks.org/sorting-algorithms/",
+            "description": "All sorting algorithms with complexity analysis",
+            "resource_type": "article",
+            "quality_score": 92
+        },
+        {
+            "title": "Sorting Algorithms Visualization",
+            "url": "https://www.sorting-algorithms.com/",
+            "description": "Interactive visualization of all sorting algorithms",
+            "resource_type": "article",
+            "quality_score": 90
+        },
+        {
+            "title": "Merge Sort vs Quick Sort",
+            "url": "https://www.geeksforgeeks.org/quick-sort-vs-merge-sort/",
+            "description": "Detailed comparison of major sorting algorithms",
+            "resource_type": "article",
+            "quality_score": 88
+        },
+        {
+            "title": "Counting Sort and Radix Sort",
+            "url": "https://www.geeksforgeeks.org/counting-sort/",
+            "description": "Non-comparison based sorting techniques",
             "resource_type": "article",
             "quality_score": 85
         }
     ],
     "Searching Algorithms": [
         {
-            "title": "Searching Algorithms Guide",
+            "title": "Search Algorithms Complete Guide",
             "url": "https://www.geeksforgeeks.org/searching-algorithms/",
-            "description": "Binary search, linear search, and advanced techniques",
+            "description": "All searching algorithms with implementations",
             "resource_type": "article",
             "quality_score": 92
+        },
+        {
+            "title": "Binary Search Mastery",
+            "url": "https://leetcode.com/explore/learn/card/binary-search/",
+            "description": "Master binary search and its variations",
+            "resource_type": "course",
+            "quality_score": 90
         },
         {
             "title": "Binary Search Visualization",
             "url": "https://www.cs.usfca.edu/~galles/visualization/Search.html",
             "description": "Interactive binary search visualization",
             "resource_type": "article",
+            "quality_score": 88
+        },
+        {
+            "title": "Advanced Search Techniques",
+            "url": "https://www.geeksforgeeks.org/ternary-search/",
+            "description": "Ternary search and other advanced techniques",
+            "resource_type": "article",
+            "quality_score": 85
+        }
+    ],
+    "Stacks": [
+        {
+            "title": "Stack Data Structure Guide",
+            "url": "https://www.geeksforgeeks.org/stack-data-structure/",
+            "description": "Complete stack implementation and applications",
+            "resource_type": "article",
+            "quality_score": 92
+        },
+        {
+            "title": "Stack Operations Visualization",
+            "url": "https://www.cs.usfca.edu/~galles/visualization/StackArray.html",
+            "description": "Interactive stack operations visualization",
+            "resource_type": "article",
             "quality_score": 90
         },
         {
-            "title": "Binary Search Mastery",
-            "url": "https://leetcode.com/explore/learn/card/binary-search/",
-            "description": "Complete binary search tutorial with problems",
+            "title": "Stack Applications Tutorial",
+            "url": "https://www.programiz.com/dsa/stack",
+            "description": "Real-world stack applications and use cases",
             "resource_type": "course",
             "quality_score": 88
         },
         {
-            "title": "Search in Rotated Arrays",
-            "url": "https://www.geeksforgeeks.org/search-an-element-in-a-sorted-and-pivoted-array/",
-            "description": "Advanced binary search variations",
+            "title": "Expression Evaluation with Stacks",
+            "url": "https://www.geeksforgeeks.org/stack-set-2-infix-to-postfix/",
+            "description": "Learn infix to postfix conversion using stacks",
+            "resource_type": "article",
+            "quality_score": 85
+        }
+    ],
+    "Queues": [
+        {
+            "title": "Queue Data Structure Tutorial",
+            "url": "https://www.geeksforgeeks.org/queue-data-structure/",
+            "description": "Comprehensive queue implementation guide",
+            "resource_type": "article",
+            "quality_score": 92
+        },
+        {
+            "title": "Queue Visualization",
+            "url": "https://www.cs.usfca.edu/~galles/visualization/QueueArray.html",
+            "description": "Interactive queue operations visualization",
+            "resource_type": "article",
+            "quality_score": 90
+        },
+        {
+            "title": "Priority Queue and Heaps",
+            "url": "https://www.programiz.com/dsa/priority-queue",
+            "description": "Learn priority queues and heap data structure",
+            "resource_type": "course",
+            "quality_score": 88
+        },
+        {
+            "title": "Circular Queue Implementation",
+            "url": "https://www.geeksforgeeks.org/circular-queue-set-1-introduction-array-implementation/",
+            "description": "Master circular queue implementation",
+            "resource_type": "article",
+            "quality_score": 85
+        }
+    ],
+    "Trees": [
+        {
+            "title": "Tree Data Structure Complete Guide",
+            "url": "https://www.geeksforgeeks.org/binary-tree-data-structure/",
+            "description": "Comprehensive tree data structure tutorial",
+            "resource_type": "article",
+            "quality_score": 92
+        },
+        {
+            "title": "Binary Tree Visualization",
+            "url": "https://www.cs.usfca.edu/~galles/visualization/BST.html",
+            "description": "Interactive binary tree operations",
+            "resource_type": "article",
+            "quality_score": 90
+        },
+        {
+            "title": "Tree Traversal Algorithms",
+            "url": "https://www.programiz.com/dsa/tree-traversal",
+            "description": "Master inorder, preorder, and postorder traversals",
+            "resource_type": "course",
+            "quality_score": 88
+        },
+        {
+            "title": "Binary Search Tree Operations",
+            "url": "https://www.geeksforgeeks.org/binary-search-tree-data-structure/",
+            "description": "Learn BST insertion, deletion, and search",
+            "resource_type": "article",
+            "quality_score": 85
+        }
+    ],
+    "Binary Trees": [
+        {
+            "title": "Binary Tree Problems and Solutions",
+            "url": "https://www.geeksforgeeks.org/binary-tree-data-structure/",
+            "description": "Comprehensive binary tree problem collection",
+            "resource_type": "article",
+            "quality_score": 92
+        },
+        {
+            "title": "Binary Tree LeetCode Problems",
+            "url": "https://leetcode.com/tag/binary-tree/",
+            "description": "Practice binary tree coding problems",
+            "resource_type": "course",
+            "quality_score": 90
+        },
+        {
+            "title": "Tree Height and Depth Algorithms",
+            "url": "https://www.geeksforgeeks.org/write-a-c-program-to-find-the-maximum-depth-or-height-of-a-tree/",
+            "description": "Learn to calculate tree height and depth",
+            "resource_type": "article",
+            "quality_score": 88
+        },
+        {
+            "title": "Lowest Common Ancestor",
+            "url": "https://www.geeksforgeeks.org/lowest-common-ancestor-binary-tree-set-1/",
+            "description": "Master LCA algorithms for binary trees",
+            "resource_type": "article",
+            "quality_score": 85
+        }
+    ],
+    "Graphs": [
+        {
+            "title": "Graph Data Structure and Algorithms",
+            "url": "https://www.geeksforgeeks.org/graph-data-structure-and-algorithms/",
+            "description": "Complete graph algorithms and implementations",
+            "resource_type": "article",
+            "quality_score": 92
+        },
+        {
+            "title": "Graph Traversal Visualization",
+            "url": "https://www.cs.usfca.edu/~galles/visualization/BFS.html",
+            "description": "Interactive BFS and DFS visualization",
+            "resource_type": "article",
+            "quality_score": 90
+        },
+        {
+            "title": "Shortest Path Algorithms",
+            "url": "https://www.programiz.com/dsa/dijkstra-algorithm",
+            "description": "Learn Dijkstra's and other shortest path algorithms",
+            "resource_type": "course",
+            "quality_score": 88
+        },
+        {
+            "title": "Graph Cycle Detection",
+            "url": "https://www.geeksforgeeks.org/detect-cycle-in-a-graph/",
+            "description": "Detect cycles in directed and undirected graphs",
             "resource_type": "article",
             "quality_score": 85
         }
@@ -520,1372 +742,1195 @@ FAST_FALLBACK_RESOURCES = {
         {
             "title": "Dynamic Programming Complete Guide",
             "url": "https://www.geeksforgeeks.org/dynamic-programming/",
-            "description": "DP patterns, memoization, and tabulation techniques",
+            "description": "Master dynamic programming with patterns",
             "resource_type": "article",
             "quality_score": 92
         },
         {
             "title": "DP Patterns for Coding Interviews",
             "url": "https://leetcode.com/discuss/general-discussion/458695/dynamic-programming-patterns",
-            "description": "Essential DP patterns with examples",
+            "description": "Common DP patterns and when to use them",
             "resource_type": "article",
             "quality_score": 90
         },
         {
-            "title": "Dynamic Programming Visualization",
-            "url": "https://www.cs.usfca.edu/~galles/visualization/DPFib.html",
-            "description": "Interactive DP problem visualization",
-            "resource_type": "article",
+            "title": "Dynamic Programming - LeetCode",
+            "url": "https://leetcode.com/tag/dynamic-programming/",
+            "description": "Practice DP problems with detailed solutions",
+            "resource_type": "course",
             "quality_score": 88
         },
         {
-            "title": "Knapsack Problem Variants",
-            "url": "https://www.geeksforgeeks.org/0-1-knapsack-problem-dp-10/",
-            "description": "Master the classic knapsack problem",
+            "title": "DP Optimization Techniques",
+            "url": "https://www.geeksforgeeks.org/overlapping-subproblems-property/",
+            "description": "Learn memoization and tabulation",
             "resource_type": "article",
             "quality_score": 85
         }
     ],
-    "Recursion": [
+    "Sorting Algorithms": [
         {
-            "title": "Recursion Complete Tutorial",
-            "url": "https://www.geeksforgeeks.org/recursion/",
-            "description": "Master recursion with examples and practice",
+            "title": "Sorting Algorithms Complete Guide",
+            "url": "https://www.geeksforgeeks.org/sorting-algorithms/",
+            "description": "All sorting algorithms with complexity analysis",
             "resource_type": "article",
             "quality_score": 92
         },
         {
-            "title": "Recursion Visualization",
-            "url": "https://www.cs.usfca.edu/~galles/visualization/RecursiveFactorial.html",
-            "description": "Interactive recursion visualization",
+            "title": "Sorting Algorithms Visualization",
+            "url": "https://www.sorting-algorithms.com/",
+            "description": "Interactive visualization of all sorting algorithms",
             "resource_type": "article",
             "quality_score": 90
         },
         {
-            "title": "Thinking Recursively",
-            "url": "https://think-recursively.com/",
-            "description": "Learn recursive thinking patterns",
-            "resource_type": "course",
+            "title": "Merge Sort vs Quick Sort",
+            "url": "https://www.geeksforgeeks.org/quick-sort-vs-merge-sort/",
+            "description": "Detailed comparison of major sorting algorithms",
+            "resource_type": "article",
             "quality_score": 88
         },
         {
-            "title": "Tail Recursion Optimization",
-            "url": "https://www.geeksforgeeks.org/tail-recursion/",
-            "description": "Understand tail recursion and optimization",
+            "title": "Counting Sort and Radix Sort",
+            "url": "https://www.geeksforgeeks.org/counting-sort/",
+            "description": "Non-comparison based sorting techniques",
             "resource_type": "article",
             "quality_score": 85
         }
     ],
-
-    # === WEB DEVELOPMENT SUBSKILLS ===
-    "HTML Basics": [
+    "Searching Algorithms": [
         {
-            "title": "HTML5 Complete Tutorial - MDN",
-            "url": "https://developer.mozilla.org/en-US/docs/Learn/HTML",
-            "description": "Comprehensive HTML5 tutorial from Mozilla",
-            "resource_type": "documentation",
-            "quality_score": 95
-        },
-        {
-            "title": "HTML Tutorial - W3Schools",
-            "url": "https://www.w3schools.com/html/",
-            "description": "Interactive HTML tutorial with live examples",
-            "resource_type": "course",
-            "quality_score": 88
-        },
-        {
-            "title": "Semantic HTML5 Elements",
-            "url": "https://www.freecodecamp.org/news/semantic-html5-elements/",
-            "description": "Learn semantic HTML for better accessibility",
-            "resource_type": "article",
-            "quality_score": 85
-        },
-        {
-            "title": "HTML Forms Deep Dive",
-            "url": "https://developer.mozilla.org/en-US/docs/Learn/Forms",
-            "description": "Master HTML forms and input validation",
-            "resource_type": "documentation",
-            "quality_score": 90
-        }
-    ],
-    "CSS Styling": [
-        {
-            "title": "CSS Complete Guide - MDN",
-            "url": "https://developer.mozilla.org/en-US/docs/Learn/CSS",
-            "description": "Comprehensive CSS learning guide",
-            "resource_type": "documentation",
-            "quality_score": 95
-        },
-        {
-            "title": "CSS Grid Garden",
-            "url": "https://cssgridgarden.com/",
-            "description": "Learn CSS Grid through interactive games",
-            "resource_type": "course",
-            "quality_score": 90
-        },
-        {
-            "title": "Flexbox Froggy",
-            "url": "https://flexboxfroggy.com/",
-            "description": "Master CSS Flexbox with fun exercises",
-            "resource_type": "course",
-            "quality_score": 90
-        },
-        {
-            "title": "CSS Animation Tutorial",
-            "url": "https://www.w3schools.com/css/css3_animations.asp",
-            "description": "Learn CSS transitions and animations",
-            "resource_type": "course",
-            "quality_score": 85
-        }
-    ],
-    "JavaScript Fundamentals": [
-        {
-            "title": "JavaScript.info - Modern Tutorial",
-            "url": "https://javascript.info/",
-            "description": "The modern JavaScript tutorial covering all fundamentals",
-            "resource_type": "article",
-            "quality_score": 95
-        },
-        {
-            "title": "You Don't Know JS",
-            "url": "https://github.com/getify/You-Dont-Know-JS",
-            "description": "Deep dive into JavaScript fundamentals",
-            "resource_type": "github",
-            "quality_score": 92
-        },
-        {
-            "title": "JavaScript30",
-            "url": "https://javascript30.com/",
-            "description": "30 vanilla JavaScript projects in 30 days",
-            "resource_type": "course",
-            "quality_score": 88
-        },
-        {
-            "title": "ES6 Features Guide",
-            "url": "https://www.w3schools.com/js/js_es6.asp",
-            "description": "Learn modern JavaScript ES6+ features",
-            "resource_type": "course",
-            "quality_score": 85
-        }
-    ],
-    "DOM Manipulation": [
-        {
-            "title": "DOM Manipulation Guide - MDN",
-            "url": "https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction",
-            "description": "Complete DOM manipulation tutorial",
-            "resource_type": "documentation",
-            "quality_score": 95
-        },
-        {
-            "title": "JavaScript DOM Tutorial",
-            "url": "https://www.w3schools.com/js/js_htmldom.asp",
-            "description": "Hands-on DOM manipulation examples",
-            "resource_type": "course",
-            "quality_score": 88
-        },
-        {
-            "title": "Event Handling in JavaScript",
-            "url": "https://javascript.info/introduction-browser-events",
-            "description": "Master JavaScript event handling",
-            "resource_type": "article",
-            "quality_score": 90
-        },
-        {
-            "title": "DOM Manipulation Projects",
-            "url": "https://www.freecodecamp.org/news/dom-manipulation-htmlcollection-vs-nodelist/",
-            "description": "Practical DOM manipulation techniques",
-            "resource_type": "article",
-            "quality_score": 85
-        }
-    ],
-
-    # === PYTHON SUBSKILLS ===
-    "Python Basics": [
-        {
-            "title": "Python.org Official Tutorial",
-            "url": "https://docs.python.org/3/tutorial/",
-            "description": "The official Python tutorial - start here",
-            "resource_type": "documentation",
-            "quality_score": 98
-        },
-        {
-            "title": "Automate the Boring Stuff",
-            "url": "https://automatetheboringstuff.com/",
-            "description": "Learn Python through practical automation",
+            "title": "Search Algorithms Complete Guide",
+            "url": "https://www.geeksforgeeks.org/searching-algorithms/",
+            "description": "All searching algorithms with implementations",
             "resource_type": "article",
             "quality_score": 92
         },
         {
-            "title": "Python for Everybody",
-            "url": "https://www.py4e.com/",
-            "description": "Free Python course from University of Michigan",
+            "title": "Binary Search Mastery",
+            "url": "https://leetcode.com/explore/learn/card/binary-search/",
+            "description": "Master binary search and its variations",
             "resource_type": "course",
             "quality_score": 90
         },
         {
-            "title": "Python Exercises for Beginners",
-            "url": "https://www.w3resource.com/python-exercises/",
-            "description": "Practice Python with hands-on exercises",
-            "resource_type": "course",
-            "quality_score": 85
-        }
-    ],
-    "Control Structures": [
-        {
-            "title": "Python Control Flow - Official Docs",
-            "url": "https://docs.python.org/3/tutorial/controlflow.html",
-            "description": "Official guide to Python control flow statements",
-            "resource_type": "documentation",
-            "quality_score": 95
-        },
-        {
-            "title": "Python Loops Tutorial",
-            "url": "https://www.w3schools.com/python/python_for_loops.asp",
-            "description": "Master for loops, while loops, and control",
-            "resource_type": "course",
+            "title": "Binary Search Visualization",
+            "url": "https://www.cs.usfca.edu/~galles/visualization/Search.html",
+            "description": "Interactive binary search visualization",
+            "resource_type": "article",
             "quality_score": 88
         },
         {
-            "title": "Conditional Statements Guide",
-            "url": "https://realpython.com/python-conditional-statements/",
-            "description": "Master Python if/elif/else statements",
-            "resource_type": "article",
-            "quality_score": 90
-        },
-        {
-            "title": "Loop Control Exercises",
-            "url": "https://pynative.com/python-if-else-and-for-loop-exercise/",
-            "description": "Practice control structure problems",
-            "resource_type": "course",
-            "quality_score": 85
-        }
-    ],
-    "Functions": [
-        {
-            "title": "Python Functions - Official Tutorial",
-            "url": "https://docs.python.org/3/tutorial/controlflow.html#defining-functions",
-            "description": "Official Python functions tutorial",
-            "resource_type": "documentation",
-            "quality_score": 95
-        },
-        {
-            "title": "Python Functions Deep Dive",
-            "url": "https://realpython.com/defining-your-own-python-function/",
-            "description": "Comprehensive guide to Python functions",
-            "resource_type": "article",
-            "quality_score": 90
-        },
-        {
-            "title": "Lambda Functions Tutorial",
-            "url": "https://www.w3schools.com/python/python_lambda.asp",
-            "description": "Learn Python lambda and anonymous functions",
-            "resource_type": "course",
-            "quality_score": 88
-        },
-        {
-            "title": "Function Decorators Guide",
-            "url": "https://realpython.com/primer-on-python-decorators/",
-            "description": "Master Python decorators and advanced functions",
+            "title": "Advanced Search Techniques",
+            "url": "https://www.geeksforgeeks.org/ternary-search/",
+            "description": "Ternary search and other advanced techniques",
             "resource_type": "article",
             "quality_score": 85
         }
     ],
-    "Object Oriented Programming": [
+    "Stacks": [
         {
-            "title": "OOP in Python - Real Python",
-            "url": "https://realpython.com/python3-object-oriented-programming/",
-            "description": "Comprehensive guide to OOP concepts in Python",
-            "resource_type": "article",
-            "quality_score": 95
-        },
-        {
-            "title": "Python Classes and Objects",
-            "url": "https://docs.python.org/3/tutorial/classes.html",
-            "description": "Official Python classes tutorial",
-            "resource_type": "documentation",
-            "quality_score": 92
-        },
-        {
-            "title": "OOP Tutorial - Programiz",
-            "url": "https://www.programiz.com/python-programming/object-oriented-programming",
-            "description": "Step-by-step OOP tutorial with examples",
-            "resource_type": "course",
-            "quality_score": 88
-        },
-        {
-            "title": "Python Design Patterns",
-            "url": "https://github.com/faif/python-patterns",
-            "description": "Python implementation of design patterns",
-            "resource_type": "github",
-            "quality_score": 85
-        }
-    ],
-
-    # Continue with existing main skill resources...
-    "Python": [
-        {
-            "title": "Python Official Tutorial",
-            "url": "https://docs.python.org/3/tutorial/",
-            "description": "The official Python tutorial covering all basics - completely free",
-            "resource_type": "documentation",
-            "quality_score": 95
-        },
-        {
-            "title": "Automate the Boring Stuff with Python",
-            "url": "https://automatetheboringstuff.com/",
-            "description": "Free online book for practical Python programming",
+            "title": "Stack Data Structure Guide",
+            "url": "https://www.geeksforgeeks.org/stack-data-structure/",
+            "description": "Complete stack implementation and applications",
             "resource_type": "article",
             "quality_score": 92
         },
         {
-            "title": "Python for Beginners - freeCodeCamp",
-            "url": "https://www.freecodecamp.org/learn/scientific-computing-with-python/",
-            "description": "Free comprehensive Python course with certificates",
-            "resource_type": "course",
+            "title": "Stack Operations Visualization",
+            "url": "https://www.cs.usfca.edu/~galles/visualization/StackArray.html",
+            "description": "Interactive stack operations visualization",
+            "resource_type": "article",
             "quality_score": 90
         },
         {
-            "title": "Python Tutorial - W3Schools",
-            "url": "https://www.w3schools.com/python/",
-            "description": "Free interactive Python tutorial with examples",
-            "resource_type": "course",
-            "quality_score": 85
-        }
-    ],
-    "Python Basics": [
-        {
-            "title": "Python Syntax Tutorial",
-            "url": "https://www.w3schools.com/python/python_syntax.asp",
-            "description": "Learn Python syntax and basic structure",
+            "title": "Stack Applications Tutorial",
+            "url": "https://www.programiz.com/dsa/stack",
+            "description": "Real-world stack applications and use cases",
             "resource_type": "course",
             "quality_score": 88
         },
         {
-            "title": "Python Variables and Data Types",
-            "url": "https://docs.python.org/3/tutorial/introduction.html",
-            "description": "Official guide to Python variables and data types",
-            "resource_type": "documentation",
-            "quality_score": 92
-        },
-        {
-            "title": "Python Beginner Exercises",
-            "url": "https://www.w3resource.com/python-exercises/python-basic-exercises.php",
-            "description": "Free practice exercises for Python beginners",
-            "resource_type": "course",
-            "quality_score": 85
-        },
-        {
-            "title": "Python Input/Output Tutorial",
-            "url": "https://realpython.com/python-input-output/",
-            "description": "Learn Python input and output operations",
+            "title": "Expression Evaluation with Stacks",
+            "url": "https://www.geeksforgeeks.org/stack-set-2-infix-to-postfix/",
+            "description": "Learn infix to postfix conversion using stacks",
             "resource_type": "article",
-            "quality_score": 87
-        }
-    ],
-    "Control Structures": [
-        {
-            "title": "Python if/else Statements",
-            "url": "https://docs.python.org/3/tutorial/controlflow.html",
-            "description": "Official guide to Python control flow statements",
-            "resource_type": "documentation",
-            "quality_score": 95
-        },
-        {
-            "title": "Python Loops Tutorial",
-            "url": "https://www.w3schools.com/python/python_for_loops.asp",
-            "description": "Learn for loops, while loops, and loop control",
-            "resource_type": "course",
-            "quality_score": 88
-        },
-        {
-            "title": "Conditional Logic in Python",
-            "url": "https://realpython.com/python-conditional-statements/",
-            "description": "Master Python conditional statements",
-            "resource_type": "article",
-            "quality_score": 90
-        },
-        {
-            "title": "Python Control Flow Exercises",
-            "url": "https://pynative.com/python-if-else-and-for-loop-exercise/",
-            "description": "Practice exercises for control structures",
-            "resource_type": "course",
             "quality_score": 85
         }
     ],
-    "Functions": [
+    "Queues": [
         {
-            "title": "Python Functions",
-            "url": "https://docs.python.org/3/tutorial/controlflow.html#defining-functions",
-            "description": "Official Python functions tutorial",
-            "resource_type": "documentation",
-            "quality_score": 95
-        },
-        {
-            "title": "Python Function Arguments",
-            "url": "https://realpython.com/python-kwargs-and-args/",
-            "description": "Master *args, **kwargs, and function parameters",
-            "resource_type": "article",
-            "quality_score": 90
-        },
-        {
-            "title": "Lambda Functions in Python",
-            "url": "https://www.w3schools.com/python/python_lambda.asp",
-            "description": "Learn lambda functions and functional programming",
-            "resource_type": "course",
-            "quality_score": 87
-        },
-        {
-            "title": "Python Function Exercises",
-            "url": "https://pynative.com/python-functions-exercise/",
-            "description": "Practice problems for Python functions",
-            "resource_type": "course",
-            "quality_score": 85
-        }
-    ],
-    "Object-Oriented Programming": [
-        {
-            "title": "Python Classes and Objects",
-            "url": "https://docs.python.org/3/tutorial/classes.html",
-            "description": "Official Python OOP tutorial",
-            "resource_type": "documentation",
-            "quality_score": 95
-        },
-        {
-            "title": "OOP in Python - Real Python",
-            "url": "https://realpython.com/python3-object-oriented-programming/",
-            "description": "Comprehensive guide to Python OOP concepts",
+            "title": "Queue Data Structure Tutorial",
+            "url": "https://www.geeksforgeeks.org/queue-data-structure/",
+            "description": "Comprehensive queue implementation guide",
             "resource_type": "article",
             "quality_score": 92
         },
         {
-            "title": "Python Inheritance Tutorial",
-            "url": "https://www.w3schools.com/python/python_inheritance.asp",
-            "description": "Learn inheritance and polymorphism in Python",
+            "title": "Queue Visualization",
+            "url": "https://www.cs.usfca.edu/~galles/visualization/QueueArray.html",
+            "description": "Interactive queue operations visualization",
+            "resource_type": "article",
+            "quality_score": 90
+        },
+        {
+            "title": "Priority Queue and Heaps",
+            "url": "https://www.programiz.com/dsa/priority-queue",
+            "description": "Learn priority queues and heap data structure",
             "resource_type": "course",
             "quality_score": 88
         },
         {
-            "title": "Python OOP Exercises",
-            "url": "https://pynative.com/python-object-oriented-programming-oop-exercise/",
-            "description": "Practice exercises for Python OOP",
-            "resource_type": "course",
+            "title": "Circular Queue Implementation",
+            "url": "https://www.geeksforgeeks.org/circular-queue-set-1-introduction-array-implementation/",
+            "description": "Master circular queue implementation",
+            "resource_type": "article",
             "quality_score": 85
         }
     ],
-    "JavaScript": [
+    "Trees": [
         {
-            "title": "MDN JavaScript Guide",
-            "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide",
-            "description": "Comprehensive free JavaScript guide by Mozilla",
-            "resource_type": "documentation",
-            "quality_score": 95
-        },
-        {
-            "title": "JavaScript.info",
-            "url": "https://javascript.info/",
-            "description": "Free modern JavaScript tutorial with interactive examples",
+            "title": "Tree Data Structure Complete Guide",
+            "url": "https://www.geeksforgeeks.org/binary-tree-data-structure/",
+            "description": "Comprehensive tree data structure tutorial",
             "resource_type": "article",
             "quality_score": 92
         },
         {
-            "title": "freeCodeCamp JavaScript",
-            "url": "https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/",
-            "description": "Free interactive JavaScript course with certification",
-            "resource_type": "course",
-            "quality_score": 90
-        },
-        {
-            "title": "Eloquent JavaScript",
-            "url": "https://eloquentjavascript.net/",
-            "description": "Free online book about JavaScript and programming",
-            "resource_type": "article",
-            "quality_score": 88
-        }
-    ],
-    "JavaScript Fundamentals": [
-        {
-            "title": "JavaScript Basics - MDN",
-            "url": "https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/JavaScript_basics",
-            "description": "Learn JavaScript syntax and basic concepts",
-            "resource_type": "documentation",
-            "quality_score": 95
-        },
-        {
-            "title": "JavaScript Variables and Types",
-            "url": "https://javascript.info/variables",
-            "description": "Understanding variables, let, const, and data types",
+            "title": "Binary Tree Visualization",
+            "url": "https://www.cs.usfca.edu/~galles/visualization/BST.html",
+            "description": "Interactive binary tree operations",
             "resource_type": "article",
             "quality_score": 90
         },
         {
-            "title": "JavaScript First Steps",
-            "url": "https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/",
-            "description": "Interactive JavaScript basics with exercises",
+            "title": "Tree Traversal Algorithms",
+            "url": "https://www.programiz.com/dsa/tree-traversal",
+            "description": "Master inorder, preorder, and postorder traversals",
             "resource_type": "course",
             "quality_score": 88
         },
         {
-            "title": "JavaScript Tutorial - W3Schools",
-            "url": "https://www.w3schools.com/js/js_intro.asp",
-            "description": "Beginner-friendly JavaScript introduction",
-            "resource_type": "course",
+            "title": "Binary Search Tree Operations",
+            "url": "https://www.geeksforgeeks.org/binary-search-tree-data-structure/",
+            "description": "Learn BST insertion, deletion, and search",
+            "resource_type": "article",
             "quality_score": 85
         }
     ],
-    "DOM Manipulation": [
+    "Binary Trees": [
         {
-            "title": "DOM Manipulation - MDN",
-            "url": "https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs/Manipulating_documents",
-            "description": "Official guide to DOM manipulation",
-            "resource_type": "documentation",
-            "quality_score": 95
-        },
-        {
-            "title": "JavaScript DOM Tutorial",
-            "url": "https://javascript.info/document",
-            "description": "Comprehensive DOM manipulation guide",
+            "title": "Binary Tree Problems and Solutions",
+            "url": "https://www.geeksforgeeks.org/binary-tree-data-structure/",
+            "description": "Comprehensive binary tree problem collection",
             "resource_type": "article",
             "quality_score": 92
         },
         {
-            "title": "DOM Manipulation Exercises",
-            "url": "https://www.freecodecamp.org/news/how-to-manipulate-the-dom-beginners-guide/",
-            "description": "Practical DOM manipulation examples",
+            "title": "Binary Tree LeetCode Problems",
+            "url": "https://leetcode.com/tag/binary-tree/",
+            "description": "Practice binary tree coding problems",
+            "resource_type": "course",
+            "quality_score": 90
+        },
+        {
+            "title": "Tree Height and Depth Algorithms",
+            "url": "https://www.geeksforgeeks.org/write-a-c-program-to-find-the-maximum-depth-or-height-of-a-tree/",
+            "description": "Learn to calculate tree height and depth",
             "resource_type": "article",
             "quality_score": 88
         },
         {
-            "title": "Interactive DOM Practice",
-            "url": "https://www.w3schools.com/js/js_htmldom.asp",
-            "description": "Practice DOM manipulation with examples",
-            "resource_type": "course",
+            "title": "Lowest Common Ancestor",
+            "url": "https://www.geeksforgeeks.org/lowest-common-ancestor-binary-tree-set-1/",
+            "description": "Master LCA algorithms for binary trees",
+            "resource_type": "article",
             "quality_score": 85
         }
     ],
-    "Asynchronous JavaScript": [
+    "Graphs": [
         {
-            "title": "Promises and Async/Await - MDN",
-            "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises",
-            "description": "Master asynchronous JavaScript concepts",
-            "resource_type": "documentation",
-            "quality_score": 95
-        },
-        {
-            "title": "Async JavaScript Tutorial",
-            "url": "https://javascript.info/async",
-            "description": "Complete guide to async programming in JavaScript",
+            "title": "Graph Data Structure and Algorithms",
+            "url": "https://www.geeksforgeeks.org/graph-data-structure-and-algorithms/",
+            "description": "Complete graph algorithms and implementations",
             "resource_type": "article",
             "quality_score": 92
         },
         {
-            "title": "Fetch API Tutorial",
-            "url": "https://www.freecodecamp.org/news/how-to-use-fetch-api/",
-            "description": "Learn to make HTTP requests with fetch",
+            "title": "Graph Traversal Visualization",
+            "url": "https://www.cs.usfca.edu/~galles/visualization/BFS.html",
+            "description": "Interactive BFS and DFS visualization",
             "resource_type": "article",
-            "quality_score": 88
-        },
-        {
-            "title": "Async JavaScript Exercises",
-            "url": "https://www.codewars.com/collections/async-javascript",
-            "description": "Practice problems for async JavaScript",
-            "resource_type": "course",
-            "quality_score": 85
-        }
-    ],
-    "React": [
-        {
-            "title": "React Official Documentation",
-            "url": "https://react.dev/learn",
-            "description": "Official free React documentation and tutorial",
-            "resource_type": "documentation",
-            "quality_score": 95
-        },
-        {
-            "title": "React Tutorial - freeCodeCamp",
-            "url": "https://www.freecodecamp.org/learn/front-end-development-libraries/react/",
-            "description": "Free comprehensive React course with certification",
-            "resource_type": "course",
             "quality_score": 90
         },
         {
-            "title": "React Tutorial for Beginners",
-            "url": "https://www.w3schools.com/react/",
-            "description": "Free step-by-step React tutorial",
-            "resource_type": "course",
-            "quality_score": 85
-        },
-        {
-            "title": "React Handbook",
-            "url": "https://reacthandbook.com/",
-            "description": "Free comprehensive React guide",
-            "resource_type": "article",
-            "quality_score": 88
-        }
-    ],
-    "HTML": [
-        {
-            "title": "MDN HTML Guide",
-            "url": "https://developer.mozilla.org/en-US/docs/Web/HTML",
-            "description": "Complete free HTML documentation by Mozilla",
-            "resource_type": "documentation",
-            "quality_score": 95
-        },
-        {
-            "title": "HTML Tutorial - W3Schools",
-            "url": "https://www.w3schools.com/html/",
-            "description": "Free interactive HTML tutorial with examples",
-            "resource_type": "course",
-            "quality_score": 90
-        },
-        {
-            "title": "HTML for Beginners - freeCodeCamp",
-            "url": "https://www.freecodecamp.org/learn/responsive-web-design/basic-html-and-html5/",
-            "description": "Free HTML course with hands-on practice",
+            "title": "Shortest Path Algorithms",
+            "url": "https://www.programiz.com/dsa/dijkstra-algorithm",
+            "description": "Learn Dijkstra's and other shortest path algorithms",
             "resource_type": "course",
             "quality_score": 88
         },
         {
-            "title": "HTML5 Tutorial",
-            "url": "https://htmldog.com/guides/html/",
-            "description": "Free comprehensive HTML guide",
+            "title": "Graph Cycle Detection",
+            "url": "https://www.geeksforgeeks.org/detect-cycle-in-a-graph/",
+            "description": "Detect cycles in directed and undirected graphs",
             "resource_type": "article",
             "quality_score": 85
         }
     ],
-    "CSS": [
+    "Dynamic Programming": [
         {
-            "title": "MDN CSS Guide",
-            "url": "https://developer.mozilla.org/en-US/docs/Web/CSS",
-            "description": "Complete free CSS documentation by Mozilla",
-            "resource_type": "documentation",
-            "quality_score": 95
-        },
-        {
-            "title": "CSS Tutorial - W3Schools",
-            "url": "https://www.w3schools.com/css/",
-            "description": "Free interactive CSS tutorial with examples",
-            "resource_type": "course",
-            "quality_score": 90
-        },
-        {
-            "title": "CSS for Beginners - freeCodeCamp",
-            "url": "https://www.freecodecamp.org/learn/responsive-web-design/basic-css/",
-            "description": "Free CSS course with practical projects",
-            "resource_type": "course",
-            "quality_score": 88
-        },
-        {
-            "title": "CSS-Tricks Guide",
-            "url": "https://css-tricks.com/guides/",
-            "description": "Free comprehensive CSS guides and tutorials",
-            "resource_type": "article",
-            "quality_score": 87
-        }
-    ],
-    "Machine Learning": [
-        {
-            "title": "Machine Learning Course - Andrew Ng",
-            "url": "https://www.coursera.org/learn/machine-learning",
-            "description": "Free audit of Andrew Ng's famous ML course (audit for free)",
-            "resource_type": "course",
-            "quality_score": 95
-        },
-        {
-            "title": "Scikit-learn Tutorial",
-            "url": "https://scikit-learn.org/stable/tutorial/index.html",
-            "description": "Free official scikit-learn tutorials and documentation",
-            "resource_type": "documentation",
-            "quality_score": 90
-        },
-        {
-            "title": "Machine Learning Mastery",
-            "url": "https://machinelearningmastery.com/start-here/",
-            "description": "Free comprehensive ML tutorials and guides",
-            "resource_type": "article",
-            "quality_score": 88
-        },
-        {
-            "title": "Kaggle Learn - ML",
-            "url": "https://www.kaggle.com/learn/intro-to-machine-learning",
-            "description": "Free micro-courses in machine learning",
-            "resource_type": "course",
-            "quality_score": 87
-        }
-    ],
-    "Data Science": [
-        {
-            "title": "Python for Data Science Handbook",
-            "url": "https://jakevdp.github.io/PythonDataScienceHandbook/",
-            "description": "Free online book for data science with Python",
+            "title": "Dynamic Programming Complete Guide",
+            "url": "https://www.geeksforgeeks.org/dynamic-programming/",
+            "description": "Master dynamic programming with patterns",
             "resource_type": "article",
             "quality_score": 92
         },
         {
-            "title": "Kaggle Learn - Data Science",
-            "url": "https://www.kaggle.com/learn",
-            "description": "Free micro-courses in data science and ML",
-            "resource_type": "course",
+            "title": "DP Patterns for Coding Interviews",
+            "url": "https://leetcode.com/discuss/general-discussion/458695/dynamic-programming-patterns",
+            "description": "Common DP patterns and when to use them",
+            "resource_type": "article",
             "quality_score": 90
         },
         {
-            "title": "Data Science Course - freeCodeCamp",
-            "url": "https://www.freecodecamp.org/learn/data-analysis-with-python/",
-            "description": "Free data analysis with Python certification course",
+            "title": "Dynamic Programming - LeetCode",
+            "url": "https://leetcode.com/tag/dynamic-programming/",
+            "description": "Practice DP problems with detailed solutions",
             "resource_type": "course",
             "quality_score": 88
         },
         {
-            "title": "R for Data Science",
-            "url": "https://r4ds.had.co.nz/",
-            "description": "Free online book for data science with R",
+            "title": "DP Optimization Techniques",
+            "url": "https://www.geeksforgeeks.org/overlapping-subproblems-property/",
+            "description": "Learn memoization and tabulation",
             "resource_type": "article",
             "quality_score": 85
         }
     ],
-    "Data Science Fundamentals": [
+    "Sorting Algorithms": [
         {
-            "title": "Introduction to Data Science - Coursera",
-            "url": "https://www.coursera.org/learn/what-is-datascience",
-            "description": "Free introduction to data science concepts (audit for free)",
-            "resource_type": "course",
-            "quality_score": 90
-        },
-        {
-            "title": "Statistics for Data Science",
-            "url": "https://www.khanacademy.org/math/statistics-probability",
-            "description": "Free statistics course essential for data science",
-            "resource_type": "course",
-            "quality_score": 88
-        },
-        {
-            "title": "Data Science Fundamentals - Kaggle",
-            "url": "https://www.kaggle.com/learn/intro-to-machine-learning",
-            "description": "Free introduction to ML and data science",
-            "resource_type": "course",
-            "quality_score": 87
-        },
-        {
-            "title": "Data Science Process Guide",
-            "url": "https://www.datascience-pm.com/crisp-dm-2/",
-            "description": "Understanding the data science methodology",
+            "title": "Sorting Algorithms Complete Guide",
+            "url": "https://www.geeksforgeeks.org/sorting-algorithms/",
+            "description": "All sorting algorithms with complexity analysis",
             "resource_type": "article",
-            "quality_score": 85
-        }
-    ],
-    "Intermediate Data Science": [
-        {
-            "title": "Feature Engineering Course",
-            "url": "https://www.kaggle.com/learn/feature-engineering",
-            "description": "Free course on creating better features for ML",
-            "resource_type": "course",
-            "quality_score": 90
-        },
-        {
-            "title": "Pandas Tutorial",
-            "url": "https://pandas.pydata.org/docs/getting_started/intro_tutorials/",
-            "description": "Official pandas tutorial for data manipulation",
-            "resource_type": "documentation",
             "quality_score": 92
         },
         {
-            "title": "Data Visualization with Python",
-            "url": "https://www.kaggle.com/learn/data-visualization",
-            "description": "Free course on creating effective visualizations",
-            "resource_type": "course",
-            "quality_score": 88
-        },
-        {
-            "title": "SQL for Data Science",
-            "url": "https://www.kaggle.com/learn/intro-to-sql",
-            "description": "Free SQL course tailored for data analysis",
-            "resource_type": "course",
-            "quality_score": 87
-        }
-    ],
-    "Practical Data Science": [
-        {
-            "title": "Kaggle Competitions",
-            "url": "https://www.kaggle.com/competitions",
-            "description": "Real-world data science problems to practice",
-            "resource_type": "course",
-            "quality_score": 95
-        },
-        {
-            "title": "Google Colab Tutorials",
-            "url": "https://colab.research.google.com/notebooks/intro.ipynb",
-            "description": "Free cloud environment for data science projects",
-            "resource_type": "course",
+            "title": "Sorting Algorithms Visualization",
+            "url": "https://www.sorting-algorithms.com/",
+            "description": "Interactive visualization of all sorting algorithms",
+            "resource_type": "article",
             "quality_score": 90
         },
         {
-            "title": "Data Science Portfolio Guide",
-            "url": "https://www.dataquest.io/blog/build-a-data-science-portfolio/",
-            "description": "How to build impressive data science projects",
+            "title": "Merge Sort vs Quick Sort",
+            "url": "https://www.geeksforgeeks.org/quick-sort-vs-merge-sort/",
+            "description": "Detailed comparison of major sorting algorithms",
             "resource_type": "article",
             "quality_score": 88
         },
         {
-            "title": "A/B Testing Guide",
-            "url": "https://www.kaggle.com/learn/a-b-testing",
-            "description": "Free course on experimental design and testing",
-            "resource_type": "course",
-            "quality_score": 85
-        }
-    ],
-    "Advanced Data Science": [
-        {
-            "title": "Deep Learning Specialization",
-            "url": "https://www.coursera.org/specializations/deep-learning",
-            "description": "Andrew Ng's deep learning course (audit for free)",
-            "resource_type": "course",
-            "quality_score": 95
-        },
-        {
-            "title": "Time Series Analysis",
-            "url": "https://www.kaggle.com/learn/time-series",
-            "description": "Free course on analyzing temporal data",
-            "resource_type": "course",
-            "quality_score": 90
-        },
-        {
-            "title": "Natural Language Processing",
-            "url": "https://huggingface.co/course/chapter1/1",
-            "description": "Free comprehensive NLP course",
-            "resource_type": "course",
-            "quality_score": 92
-        },
-        {
-            "title": "MLOps Fundamentals",
-            "url": "https://madewithml.com/",
-            "description": "Free course on production ML systems",
-            "resource_type": "course",
-            "quality_score": 88
-        }
-    ],
-    "Data Science Best Practices": [
-        {
-            "title": "Clean Code for Data Science",
-            "url": "https://www.kdnuggets.com/2020/03/data-science-clean-code.html",
-            "description": "Writing maintainable data science code",
-            "resource_type": "article",
-            "quality_score": 88
-        },
-        {
-            "title": "Data Ethics Course",
-            "url": "https://ethics.fast.ai/",
-            "description": "Free course on ethical considerations in data science",
-            "resource_type": "course",
-            "quality_score": 90
-        },
-        {
-            "title": "Reproducible Research",
-            "url": "https://www.coursera.org/learn/reproducible-research",
-            "description": "Best practices for reproducible data science",
-            "resource_type": "course",
-            "quality_score": 87
-        },
-        {
-            "title": "Model Deployment Guide",
-            "url": "https://christophergs.com/machine%20learning/2019/03/17/how-to-deploy-machine-learning-models/",
-            "description": "Guide to deploying ML models in production",
+            "title": "Counting Sort and Radix Sort",
+            "url": "https://www.geeksforgeeks.org/counting-sort/",
+            "description": "Non-comparison based sorting techniques",
             "resource_type": "article",
             "quality_score": 85
         }
     ],
-    "Data Structures": [
+    "Searching Algorithms": [
         {
-            "title": "Striver's A2Z DSA Course/Sheet",
-            "url": "https://takeuforward.org/strivers-a2z-dsa-course/strivers-a2z-dsa-course-sheet-2/",
-            "description": "Comprehensive step-by-step DSA sheet by Striver - most popular DSA preparation resource",
-            "resource_type": "course",
-            "quality_score": 98
-        },
-        {
-            "title": "Data Structures Visualizations",
-            "url": "https://www.cs.usfca.edu/~galles/visualization/Algorithms.html",
-            "description": "Free interactive data structure and algorithm visualizations",
+            "title": "Search Algorithms Complete Guide",
+            "url": "https://www.geeksforgeeks.org/searching-algorithms/",
+            "description": "All searching algorithms with implementations",
             "resource_type": "article",
-            "quality_score": 95
-        },
-        {
-            "title": "GeeksforGeeks Data Structures",
-            "url": "https://www.geeksforgeeks.org/data-structures/",
-            "description": "Free comprehensive data structures tutorials",
-            "resource_type": "article",
-            "quality_score": 88
-        },
-        {
-            "title": "Algorithms Course - Princeton",
-            "url": "https://www.coursera.org/learn/algorithms-part1",
-            "description": "Free audit of Princeton's algorithms course",
-            "resource_type": "course",
             "quality_score": 92
         },
         {
-            "title": "Data Structures - freeCodeCamp",
-            "url": "https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/",
-            "description": "Free data structures and algorithms with JavaScript",
+            "title": "Binary Search Mastery",
+            "url": "https://leetcode.com/explore/learn/card/binary-search/",
+            "description": "Master binary search and its variations",
             "resource_type": "course",
-            "quality_score": 85
-        }
-    ],
-    "Node.js": [
-        {
-            "title": "Node.js Official Documentation",
-            "url": "https://nodejs.org/en/docs/",
-            "description": "Free official Node.js documentation and guides",
-            "resource_type": "documentation",
-            "quality_score": 95
+            "quality_score": 90
         },
         {
-            "title": "Node.js Tutorial - W3Schools",
-            "url": "https://www.w3schools.com/nodejs/",
-            "description": "Free comprehensive Node.js tutorial",
-            "resource_type": "course",
+            "title": "Binary Search Visualization",
+            "url": "https://www.cs.usfca.edu/~galles/visualization/Search.html",
+            "description": "Interactive binary search visualization",
+            "resource_type": "article",
             "quality_score": 88
         },
         {
-            "title": "Learn Node.js - freeCodeCamp",
-            "url": "https://www.freecodecamp.org/news/free-8-hour-node-express-course/",
-            "description": "Free 8-hour Node.js and Express course",
-            "resource_type": "course",
-            "quality_score": 87
-        },
-        {
-            "title": "Node.js Tutorial - GeeksforGeeks",
-            "url": "https://www.geeksforgeeks.org/nodejs-tutorial/",
-            "description": "Free Node.js tutorial with examples",
+            "title": "Advanced Search Techniques",
+            "url": "https://www.geeksforgeeks.org/ternary-search/",
+            "description": "Ternary search and other advanced techniques",
             "resource_type": "article",
             "quality_score": 85
         }
     ],
-    "Git": [
+    "Stacks": [
         {
-            "title": "Git Official Tutorial",
-            "url": "https://git-scm.com/docs/gittutorial",
-            "description": "Free official Git tutorial and documentation",
-            "resource_type": "documentation",
-            "quality_score": 95
-        },
-        {
-            "title": "Learn Git Branching",
-            "url": "https://learngitbranching.js.org/",
-            "description": "Free interactive Git tutorial with visual learning",
-            "resource_type": "course",
+            "title": "Stack Data Structure Guide",
+            "url": "https://www.geeksforgeeks.org/stack-data-structure/",
+            "description": "Complete stack implementation and applications",
+            "resource_type": "article",
             "quality_score": 92
         },
         {
-            "title": "Git Handbook - GitHub",
-            "url": "https://guides.github.com/introduction/git-handbook/",
-            "description": "Free comprehensive Git guide by GitHub",
+            "title": "Stack Operations Visualization",
+            "url": "https://www.cs.usfca.edu/~galles/visualization/StackArray.html",
+            "description": "Interactive stack operations visualization",
             "resource_type": "article",
             "quality_score": 90
         },
         {
-            "title": "Git Tutorial - Atlassian",
-            "url": "https://www.atlassian.com/git/tutorials",
-            "description": "Free comprehensive Git tutorials",
-            "resource_type": "course",
-            "quality_score": 88
-        }
-    ],
-    "SQL": [
-        {
-            "title": "SQL Tutorial - W3Schools",
-            "url": "https://www.w3schools.com/sql/",
-            "description": "Free interactive SQL tutorial with examples",
-            "resource_type": "course",
-            "quality_score": 90
-        },
-        {
-            "title": "SQLBolt",
-            "url": "https://sqlbolt.com/",
-            "description": "Free interactive SQL lessons and exercises",
+            "title": "Stack Applications Tutorial",
+            "url": "https://www.programiz.com/dsa/stack",
+            "description": "Real-world stack applications and use cases",
             "resource_type": "course",
             "quality_score": 88
         },
         {
-            "title": "SQL Course - freeCodeCamp",
-            "url": "https://www.freecodecamp.org/learn/relational-database/",
-            "description": "Free relational database and SQL certification course",
-            "resource_type": "course",
-            "quality_score": 87
-        },
-        {
-            "title": "PostgreSQL Tutorial",
-            "url": "https://www.postgresqltutorial.com/",
-            "description": "Free comprehensive PostgreSQL tutorial",
+            "title": "Expression Evaluation with Stacks",
+            "url": "https://www.geeksforgeeks.org/stack-set-2-infix-to-postfix/",
+            "description": "Learn infix to postfix conversion using stacks",
             "resource_type": "article",
             "quality_score": 85
         }
     ],
-    "Algorithms": [
+    "Queues": [
         {
-            "title": "Striver's A2Z DSA Course/Sheet",
-            "url": "https://takeuforward.org/strivers-a2z-dsa-course/strivers-a2z-dsa-course-sheet-2/",
-            "description": "Comprehensive step-by-step DSA sheet by Striver - most popular DSA preparation resource",
-            "resource_type": "course",
-            "quality_score": 98
-        },
-        {
-            "title": "Introduction to Algorithms - MIT",
-            "url": "https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-006-introduction-to-algorithms-fall-2011/",
-            "description": "Free MIT algorithms course with video lectures",
-            "resource_type": "course",
-            "quality_score": 95
-        },
-        {
-            "title": "Algorithm Visualizer",
-            "url": "https://algorithm-visualizer.org/",
-            "description": "Free interactive algorithm visualizations",
+            "title": "Queue Data Structure Tutorial",
+            "url": "https://www.geeksforgeeks.org/queue-data-structure/",
+            "description": "Comprehensive queue implementation guide",
             "resource_type": "article",
-            "quality_score": 90
-        },
-        {
-            "title": "Algorithms - GeeksforGeeks",
-            "url": "https://www.geeksforgeeks.org/fundamentals-of-algorithms/",
-            "description": "Free comprehensive algorithms tutorials",
-            "resource_type": "article",
-            "quality_score": 88
-        },
-        {
-            "title": "LeetCode Practice",
-            "url": "https://leetcode.com/problemset/all/",
-            "description": "Free algorithm practice problems (basic tier)",
-            "resource_type": "course",
-            "quality_score": 85
-        }
-    ],
-    "Variables": [
-        {
-            "title": "Variables in Programming",
-            "url": "https://developer.mozilla.org/en-US/docs/Glossary/Variable",
-            "description": "Understanding variables in programming",
-            "resource_type": "documentation",
-            "quality_score": 85
-        },
-        {
-            "title": "Python Variables Tutorial",
-            "url": "https://www.w3schools.com/python/python_variables.asp",
-            "description": "Learn about Python variables",
-            "resource_type": "article",
-            "quality_score": 80
-        }
-    ],
-    "Data Types": [
-        {
-            "title": "Python Data Types",
-            "url": "https://docs.python.org/3/library/stdtypes.html",
-            "description": "Official Python data types documentation",
-            "resource_type": "documentation",
-            "quality_score": 90
-        },
-        {
-            "title": "Understanding Data Types",
-            "url": "https://www.w3schools.com/python/python_datatypes.asp",
-            "description": "Learn about different data types",
-            "resource_type": "article",
-            "quality_score": 82
-        }
-    ],
-    "Control Flow": [
-        {
-            "title": "Control Flow Statements",
-            "url": "https://docs.python.org/3/tutorial/controlflow.html",
-            "description": "Python control flow tutorial",
-            "resource_type": "documentation",
-            "quality_score": 90
-        },
-        {
-            "title": "If, Elif, Else Statements",
-            "url": "https://www.w3schools.com/python/python_conditions.asp",
-            "description": "Learn conditional statements",
-            "resource_type": "article",
-            "quality_score": 80
-        }
-    ],
-    "Functions": [
-        {
-            "title": "Python Functions",
-            "url": "https://docs.python.org/3/tutorial/controlflow.html#defining-functions",
-            "description": "Official Python functions tutorial",
-            "resource_type": "documentation",
             "quality_score": 92
         },
         {
-            "title": "Functions in Programming",
-            "url": "https://www.w3schools.com/python/python_functions.asp",
-            "description": "Learn how to create and use functions",
+            "title": "Queue Visualization",
+            "url": "https://www.cs.usfca.edu/~galles/visualization/QueueArray.html",
+            "description": "Interactive queue operations visualization",
+            "resource_type": "article",
+            "quality_score": 90
+        },
+        {
+            "title": "Priority Queue and Heaps",
+            "url": "https://www.programiz.com/dsa/priority-queue",
+            "description": "Learn priority queues and heap data structure",
+            "resource_type": "course",
+            "quality_score": 88
+        },
+        {
+            "title": "Circular Queue Implementation",
+            "url": "https://www.geeksforgeeks.org/circular-queue-set-1-introduction-array-implementation/",
+            "description": "Master circular queue implementation",
             "resource_type": "article",
             "quality_score": 85
         }
     ],
-    "OOP": [
+    "Trees": [
         {
-            "title": "Object-Oriented Programming in Python",
-            "url": "https://docs.python.org/3/tutorial/classes.html",
-            "description": "Official Python OOP tutorial",
-            "resource_type": "documentation",
-            "quality_score": 90
-        },
-        {
-            "title": "Python OOP Concepts",
-            "url": "https://www.w3schools.com/python/python_classes.asp",
-            "description": "Learn object-oriented programming",
+            "title": "Tree Data Structure Complete Guide",
+            "url": "https://www.geeksforgeeks.org/binary-tree-data-structure/",
+            "description": "Comprehensive tree data structure tutorial",
             "resource_type": "article",
-            "quality_score": 83
-        }
-    ],
-    "Java": [
-        {
-            "title": "Oracle Java Tutorial",
-            "url": "https://docs.oracle.com/javase/tutorial/",
-            "description": "Official Java tutorial from Oracle",
-            "resource_type": "documentation",
-            "quality_score": 95
+            "quality_score": 92
         },
         {
-            "title": "Java Programming - freeCodeCamp",
-            "url": "https://www.freecodecamp.org/news/java-tutorial-for-beginners/",
-            "description": "Complete Java programming course",
-            "resource_type": "course",
+            "title": "Binary Tree Visualization",
+            "url": "https://www.cs.usfca.edu/~galles/visualization/BST.html",
+            "description": "Interactive binary tree operations",
+            "resource_type": "article",
             "quality_score": 90
         },
         {
-            "title": "Codecademy Java Course",
-            "url": "https://www.codecademy.com/learn/learn-java",
-            "description": "Interactive Java programming course",
+            "title": "Tree Traversal Algorithms",
+            "url": "https://www.programiz.com/dsa/tree-traversal",
+            "description": "Master inorder, preorder, and postorder traversals",
             "resource_type": "course",
             "quality_score": 88
         },
         {
-            "title": "Java Code Examples",
-            "url": "https://www.programiz.com/java-programming",
-            "description": "Java programming examples and tutorials",
+            "title": "Binary Search Tree Operations",
+            "url": "https://www.geeksforgeeks.org/binary-search-tree-data-structure/",
+            "description": "Learn BST insertion, deletion, and search",
             "resource_type": "article",
             "quality_score": 85
         }
     ],
-    "C++": [
+    "Binary Trees": [
         {
-            "title": "C++ Tutorial - cplusplus.com",
-            "url": "https://www.cplusplus.com/doc/tutorial/",
-            "description": "Comprehensive C++ programming tutorial",
-            "resource_type": "documentation",
+            "title": "Binary Tree Problems and Solutions",
+            "url": "https://www.geeksforgeeks.org/binary-tree-data-structure/",
+            "description": "Comprehensive binary tree problem collection",
+            "resource_type": "article",
             "quality_score": 92
         },
         {
-            "title": "Learn C++ - freeCodeCamp",
-            "url": "https://www.freecodecamp.org/news/c-plus-plus-tutorial/",
-            "description": "Complete C++ programming course",
+            "title": "Binary Tree LeetCode Problems",
+            "url": "https://leetcode.com/tag/binary-tree/",
+            "description": "Practice binary tree coding problems",
             "resource_type": "course",
+            "quality_score": 90
+        },
+        {
+            "title": "Tree Height and Depth Algorithms",
+            "url": "https://www.geeksforgeeks.org/write-a-c-program-to-find-the-maximum-depth-or-height-of-a-tree/",
+            "description": "Learn to calculate tree height and depth",
+            "resource_type": "article",
             "quality_score": 88
         },
         {
-            "title": "C++ Programming Examples",
-            "url": "https://www.programiz.com/cpp-programming",
-            "description": "C++ examples and practice problems",
+            "title": "Lowest Common Ancestor",
+            "url": "https://www.geeksforgeeks.org/lowest-common-ancestor-binary-tree-set-1/",
+            "description": "Master LCA algorithms for binary trees",
             "resource_type": "article",
             "quality_score": 85
         }
     ],
-    "C#": [
+    "Graphs": [
         {
-            "title": "Microsoft C# Documentation",
-            "url": "https://docs.microsoft.com/en-us/dotnet/csharp/",
-            "description": "Official C# documentation and tutorials",
-            "resource_type": "documentation",
-            "quality_score": 95
-        },
-        {
-            "title": "C# Tutorial - W3Schools",
-            "url": "https://www.w3schools.com/cs/",
-            "description": "Interactive C# tutorial with examples",
-            "resource_type": "course",
-            "quality_score": 88
-        }
-    ],
-    "Go": [
-        {
-            "title": "Go by Example",
-            "url": "https://gobyexample.com/",
-            "description": "Hands-on introduction to Go programming",
-            "resource_type": "course",
-            "quality_score": 90
-        },
-        {
-            "title": "Tour of Go",
-            "url": "https://tour.golang.org/",
-            "description": "Interactive introduction to Go",
-            "resource_type": "course",
-            "quality_score": 92
-        }
-    ],
-    "Rust": [
-        {
-            "title": "The Rust Programming Language Book",
-            "url": "https://doc.rust-lang.org/book/",
-            "description": "The official Rust programming language book",
-            "resource_type": "documentation",
-            "quality_score": 95
-        },
-        {
-            "title": "Rust by Example",
-            "url": "https://doc.rust-lang.org/stable/rust-by-example/",
-            "description": "Learn Rust with examples",
-            "resource_type": "course",
-            "quality_score": 90
-        }
-    ],
-    "Swift": [
-        {
-            "title": "Swift Programming Language Guide",
-            "url": "https://docs.swift.org/swift-book/",
-            "description": "Official Swift programming guide",
-            "resource_type": "documentation",
-            "quality_score": 95
-        },
-        {
-            "title": "100 Days of SwiftUI",
-            "url": "https://www.hackingwithswift.com/100/swiftui",
-            "description": "Free SwiftUI course",
-            "resource_type": "course",
-            "quality_score": 90
-        }
-    ],
-    "Kotlin": [
-        {
-            "title": "Kotlin Documentation",
-            "url": "https://kotlinlang.org/docs/",
-            "description": "Official Kotlin documentation and tutorials",
-            "resource_type": "documentation",
-            "quality_score": 92
-        },
-        {
-            "title": "Kotlin Koans",
-            "url": "https://play.kotlinlang.org/koans/",
-            "description": "Interactive Kotlin exercises",
-            "resource_type": "course",
-            "quality_score": 88
-        }
-    ],
-    
-    # Frameworks and Libraries
-    "Angular": [
-        {
-            "title": "Angular Documentation",
-            "url": "https://angular.io/docs",
-            "description": "Official Angular documentation and tutorials",
-            "resource_type": "documentation",
-            "quality_score": 95
-        },
-        {
-            "title": "Angular Tutorial - freeCodeCamp",
-            "url": "https://www.freecodecamp.org/learn/front-end-development-libraries/",
-            "description": "Complete Angular course",
-            "resource_type": "course",
-            "quality_score": 90
-        }
-    ],
-    "Vue.js": [
-        {
-            "title": "Vue.js Guide",
-            "url": "https://vuejs.org/guide/",
-            "description": "Official Vue.js guide and documentation",
-            "resource_type": "documentation",
-            "quality_score": 95
-        },
-        {
-            "title": "Vue Mastery",
-            "url": "https://www.vuemastery.com/courses-path/beginner",
-            "description": "Free Vue.js courses for beginners",
-            "resource_type": "course",
-            "quality_score": 90
-        }
-    ],
-    "Django": [
-        {
-            "title": "Django Documentation",
-            "url": "https://docs.djangoproject.com/en/stable/",
-            "description": "Official Django documentation and tutorial",
-            "resource_type": "documentation",
-            "quality_score": 95
-        },
-        {
-            "title": "Django for Beginners",
-            "url": "https://djangoforbeginners.com/",
-            "description": "Complete Django tutorial book",
-            "resource_type": "article",
-            "quality_score": 90
-        }
-    ],
-    "Flask": [
-        {
-            "title": "Flask Documentation",
-            "url": "https://flask.palletsprojects.com/",
-            "description": "Official Flask documentation and quickstart",
-            "resource_type": "documentation",
-            "quality_score": 95
-        },
-        {
-            "title": "Flask Mega-Tutorial",
-            "url": "https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world",
-            "description": "Comprehensive Flask tutorial series",
+            "title": "Graph Data Structure and Algorithms",
+            "url": "https://www.geeksforgeeks.org/graph-data-structure-and-algorithms/",
+            "description": "Complete graph algorithms and implementations",
             "resource_type": "article",
             "quality_score": 92
+        },
+        {
+            "title": "Graph Traversal Visualization",
+            "url": "https://www.cs.usfca.edu/~galles/visualization/BFS.html",
+            "description": "Interactive BFS and DFS visualization",
+            "resource_type": "article",
+            "quality_score": 90
+        },
+        {
+            "title": "Shortest Path Algorithms",
+            "url": "https://www.programiz.com/dsa/dijkstra-algorithm",
+            "description": "Learn Dijkstra's and other shortest path algorithms",
+            "resource_type": "course",
+            "quality_score": 88
+        },
+        {
+            "title": "Graph Cycle Detection",
+            "url": "https://www.geeksforgeeks.org/detect-cycle-in-a-graph/",
+            "description": "Detect cycles in directed and undirected graphs",
+            "resource_type": "article",
+            "quality_score": 85
         }
     ],
-    
-    # Data & Analytics
-    "Excel": [
+    "Dynamic Programming": [
         {
-            "title": "Excel Tutorial - ExcelJet",
-            "url": "https://exceljet.net/excel-tutorial",
-            "description": "Comprehensive Excel tutorials and tips",
+            "title": "Dynamic Programming Complete Guide",
+            "url": "https://www.geeksforgeeks.org/dynamic-programming/",
+            "description": "Master dynamic programming with patterns",
+            "resource_type": "article",
+            "quality_score": 92
+        },
+        {
+            "title": "DP Patterns for Coding Interviews",
+            "url": "https://leetcode.com/discuss/general-discussion/458695/dynamic-programming-patterns",
+            "description": "Common DP patterns and when to use them",
+            "resource_type": "article",
+            "quality_score": 90
+        },
+        {
+            "title": "Dynamic Programming - LeetCode",
+            "url": "https://leetcode.com/tag/dynamic-programming/",
+            "description": "Practice DP problems with detailed solutions",
+            "resource_type": "course",
+            "quality_score": 88
+        },
+        {
+            "title": "DP Optimization Techniques",
+            "url": "https://www.geeksforgeeks.org/overlapping-subproblems-property/",
+            "description": "Learn memoization and tabulation",
+            "resource_type": "article",
+            "quality_score": 85
+        }
+    ],
+    "Sorting Algorithms": [
+        {
+            "title": "Sorting Algorithms Complete Guide",
+            "url": "https://www.geeksforgeeks.org/sorting-algorithms/",
+            "description": "All sorting algorithms with complexity analysis",
+            "resource_type": "article",
+            "quality_score": 92
+        },
+        {
+            "title": "Sorting Algorithms Visualization",
+            "url": "https://www.sorting-algorithms.com/",
+            "description": "Interactive visualization of all sorting algorithms",
+            "resource_type": "article",
+            "quality_score": 90
+        },
+        {
+            "title": "Merge Sort vs Quick Sort",
+            "url": "https://www.geeksforgeeks.org/quick-sort-vs-merge-sort/",
+            "description": "Detailed comparison of major sorting algorithms",
+            "resource_type": "article",
+            "quality_score": 88
+        },
+        {
+            "title": "Counting Sort and Radix Sort",
+            "url": "https://www.geeksforgeeks.org/counting-sort/",
+            "description": "Non-comparison based sorting techniques",
+            "resource_type": "article",
+            "quality_score": 85
+        }
+    ],
+    "Searching Algorithms": [
+        {
+            "title": "Search Algorithms Complete Guide",
+            "url": "https://www.geeksforgeeks.org/searching-algorithms/",
+            "description": "All searching algorithms with implementations",
+            "resource_type": "article",
+            "quality_score": 92
+        },
+        {
+            "title": "Binary Search Mastery",
+            "url": "https://leetcode.com/explore/learn/card/binary-search/",
+            "description": "Master binary search and its variations",
             "resource_type": "course",
             "quality_score": 90
         },
         {
-            "title": "Microsoft Excel Help Center",
-            "url": "https://support.microsoft.com/en-us/excel",
-            "description": "Official Excel help and tutorials",
-            "resource_type": "documentation",
+            "title": "Binary Search Visualization",
+            "url": "https://www.cs.usfca.edu/~galles/visualization/Search.html",
+            "description": "Interactive binary search visualization",
+            "resource_type": "article",
             "quality_score": 88
+        },
+        {
+            "title": "Advanced Search Techniques",
+            "url": "https://www.geeksforgeeks.org/ternary-search/",
+            "description": "Ternary search and other advanced techniques",
+            "resource_type": "article",
+            "quality_score": 85
         }
     ],
-    "Tableau": [
+    "Stacks": [
         {
-            "title": "Tableau Learning",
-            "url": "https://www.tableau.com/learn",
-            "description": "Free Tableau training and tutorials",
-            "resource_type": "course",
+            "title": "Stack Data Structure Guide",
+            "url": "https://www.geeksforgeeks.org/stack-data-structure/",
+            "description": "Complete stack implementation and applications",
+            "resource_type": "article",
             "quality_score": 92
         },
         {
-            "title": "Tableau Public Training",
-            "url": "https://public.tableau.com/en-us/s/resources",
-            "description": "Free resources for Tableau Public",
+            "title": "Stack Operations Visualization",
+            "url": "https://www.cs.usfca.edu/~galles/visualization/StackArray.html",
+            "description": "Interactive stack operations visualization",
+            "resource_type": "article",
+            "quality_score": 90
+        },
+        {
+            "title": "Stack Applications Tutorial",
+            "url": "https://www.programiz.com/dsa/stack",
+            "description": "Real-world stack applications and use cases",
             "resource_type": "course",
             "quality_score": 88
+        },
+        {
+            "title": "Expression Evaluation with Stacks",
+            "url": "https://www.geeksforgeeks.org/stack-set-2-infix-to-postfix/",
+            "description": "Learn infix to postfix conversion using stacks",
+            "resource_type": "article",
+            "quality_score": 85
         }
     ],
-    "Power BI": [
+    "Queues": [
         {
-            "title": "Microsoft Power BI Learning",
-            "url": "https://docs.microsoft.com/en-us/power-bi/guided-learning/",
-            "description": "Official Power BI guided learning",
-            "resource_type": "course",
+            "title": "Queue Data Structure Tutorial",
+            "url": "https://www.geeksforgeeks.org/queue-data-structure/",
+            "description": "Comprehensive queue implementation guide",
+            "resource_type": "article",
             "quality_score": 92
         },
         {
-            "title": "Power BI YouTube Channel",
-            "url": "https://www.youtube.com/user/mspowerbi",
-            "description": "Official Power BI video tutorials",
-            "resource_type": "video",
+            "title": "Queue Visualization",
+            "url": "https://www.cs.usfca.edu/~galles/visualization/QueueArray.html",
+            "description": "Interactive queue operations visualization",
+            "resource_type": "article",
+            "quality_score": 90
+        },
+        {
+            "title": "Priority Queue and Heaps",
+            "url": "https://www.programiz.com/dsa/priority-queue",
+            "description": "Learn priority queues and heap data structure",
+            "resource_type": "course",
             "quality_score": 88
+        },
+        {
+            "title": "Circular Queue Implementation",
+            "url": "https://www.geeksforgeeks.org/circular-queue-set-1-introduction-array-implementation/",
+            "description": "Master circular queue implementation",
+            "resource_type": "article",
+            "quality_score": 85
         }
     ],
-    
+    "Trees": [
+        {
+            "title": "Tree Data Structure Complete Guide",
+            "url": "https://www.geeksforgeeks.org/binary-tree-data-structure/",
+            "description": "Comprehensive tree data structure tutorial",
+            "resource_type": "article",
+            "quality_score": 92
+        },
+        {
+            "title": "Binary Tree Visualization",
+            "url": "https://www.cs.usfca.edu/~galles/visualization/BST.html",
+            "description": "Interactive binary tree operations",
+            "resource_type": "article",
+            "quality_score": 90
+        },
+        {
+            "title": "Tree Traversal Algorithms",
+            "url": "https://www.programiz.com/dsa/tree-traversal",
+            "description": "Master inorder, preorder, and postorder traversals",
+            "resource_type": "course",
+            "quality_score": 88
+        },
+        {
+            "title": "Binary Search Tree Operations",
+            "url": "https://www.geeksforgeeks.org/binary-search-tree-data-structure/",
+            "description": "Learn BST insertion, deletion, and search",
+            "resource_type": "article",
+            "quality_score": 85
+        }
+    ],
+    "Binary Trees": [
+        {
+            "title": "Binary Tree Problems and Solutions",
+            "url": "https://www.geeksforgeeks.org/binary-tree-data-structure/",
+            "description": "Comprehensive binary tree problem collection",
+            "resource_type": "article",
+            "quality_score": 92
+        },
+        {
+            "title": "Binary Tree LeetCode Problems",
+            "url": "https://leetcode.com/tag/binary-tree/",
+            "description": "Practice binary tree coding problems",
+            "resource_type": "course",
+            "quality_score": 90
+        },
+        {
+            "title": "Tree Height and Depth Algorithms",
+            "url": "https://www.geeksforgeeks.org/write-a-c-program-to-find-the-maximum-depth-or-height-of-a-tree/",
+            "description": "Learn to calculate tree height and depth",
+            "resource_type": "article",
+            "quality_score": 88
+        },
+        {
+            "title": "Lowest Common Ancestor",
+            "url": "https://www.geeksforgeeks.org/lowest-common-ancestor-binary-tree-set-1/",
+            "description": "Master LCA algorithms for binary trees",
+            "resource_type": "article",
+            "quality_score": 85
+        }
+    ],
+    "Graphs": [
+        {
+            "title": "Graph Data Structure and Algorithms",
+            "url": "https://www.geeksforgeeks.org/graph-data-structure-and-algorithms/",
+            "description": "Complete graph algorithms and implementations",
+            "resource_type": "article",
+            "quality_score": 92
+        },
+        {
+            "title": "Graph Traversal Visualization",
+            "url": "https://www.cs.usfca.edu/~galles/visualization/BFS.html",
+            "description": "Interactive BFS and DFS visualization",
+            "resource_type": "article",
+            "quality_score": 90
+        },
+        {
+            "title": "Shortest Path Algorithms",
+            "url": "https://www.programiz.com/dsa/dijkstra-algorithm",
+            "description": "Learn Dijkstra's and other shortest path algorithms",
+            "resource_type": "course",
+            "quality_score": 88
+        },
+        {
+            "title": "Graph Cycle Detection",
+            "url": "https://www.geeksforgeeks.org/detect-cycle-in-a-graph/",
+            "description": "Detect cycles in directed and undirected graphs",
+            "resource_type": "article",
+            "quality_score": 85
+        }
+    ],
+    "Dynamic Programming": [
+        {
+            "title": "Dynamic Programming Complete Guide",
+            "url": "https://www.geeksforgeeks.org/dynamic-programming/",
+            "description": "Master dynamic programming with patterns",
+            "resource_type": "article",
+            "quality_score": 92
+        },
+        {
+            "title": "DP Patterns for Coding Interviews",
+            "url": "https://leetcode.com/discuss/general-discussion/458695/dynamic-programming-patterns",
+            "description": "Common DP patterns and when to use them",
+            "resource_type": "article",
+            "quality_score": 90
+        },
+        {
+            "title": "Dynamic Programming - LeetCode",
+            "url": "https://leetcode.com/tag/dynamic-programming/",
+            "description": "Practice DP problems with detailed solutions",
+            "resource_type": "course",
+            "quality_score": 88
+        },
+        {
+            "title": "DP Optimization Techniques",
+            "url": "https://www.geeksforgeeks.org/overlapping-subproblems-property/",
+            "description": "Learn memoization and tabulation",
+            "resource_type": "article",
+            "quality_score": 85
+        }
+    ],
+    "Sorting Algorithms": [
+        {
+            "title": "Sorting Algorithms Complete Guide",
+            "url": "https://www.geeksforgeeks.org/sorting-algorithms/",
+            "description": "All sorting algorithms with complexity analysis",
+            "resource_type": "article",
+            "quality_score": 92
+        },
+        {
+            "title": "Sorting Algorithms Visualization",
+            "url": "https://www.sorting-algorithms.com/",
+            "description": "Interactive visualization of all sorting algorithms",
+            "resource_type": "article",
+            "quality_score": 90
+        },
+        {
+            "title": "Merge Sort vs Quick Sort",
+            "url": "https://www.geeksforgeeks.org/quick-sort-vs-merge-sort/",
+            "description": "Detailed comparison of major sorting algorithms",
+            "resource_type": "article",
+            "quality_score": 88
+        },
+        {
+            "title": "Counting Sort and Radix Sort",
+            "url": "https://www.geeksforgeeks.org/counting-sort/",
+            "description": "Non-comparison based sorting techniques",
+            "resource_type": "article",
+            "quality_score": 85
+        }
+    ],
+    "Searching Algorithms": [
+        {
+            "title": "Search Algorithms Complete Guide",
+            "url": "https://www.geeksforgeeks.org/searching-algorithms/",
+            "description": "All searching algorithms with implementations",
+            "resource_type": "article",
+            "quality_score": 92
+        },
+        {
+            "title": "Binary Search Mastery",
+            "url": "https://leetcode.com/explore/learn/card/binary-search/",
+            "description": "Master binary search and its variations",
+            "resource_type": "course",
+            "quality_score": 90
+        },
+        {
+            "title": "Binary Search Visualization",
+            "url": "https://www.cs.usfca.edu/~galles/visualization/Search.html",
+            "description": "Interactive binary search visualization",
+            "resource_type": "article",
+            "quality_score": 88
+        },
+        {
+            "title": "Advanced Search Techniques",
+            "url": "https://www.geeksforgeeks.org/ternary-search/",
+            "description": "Ternary search and other advanced techniques",
+            "resource_type": "article",
+            "quality_score": 85
+        }
+    ],
+    "Stacks": [
+        {
+            "title": "Stack Data Structure Guide",
+            "url": "https://www.geeksforgeeks.org/stack-data-structure/",
+            "description": "Complete stack implementation and applications",
+            "resource_type": "article",
+            "quality_score": 92
+        },
+        {
+            "title": "Stack Operations Visualization",
+            "url": "https://www.cs.usfca.edu/~galles/visualization/StackArray.html",
+            "description": "Interactive stack operations visualization",
+            "resource_type": "article",
+            "quality_score": 90
+        },
+        {
+            "title": "Stack Applications Tutorial",
+            "url": "https://www.programiz.com/dsa/stack",
+            "description": "Real-world stack applications and use cases",
+            "resource_type": "course",
+            "quality_score": 88
+        },
+        {
+            "title": "Expression Evaluation with Stacks",
+            "url": "https://www.geeksforgeeks.org/stack-set-2-infix-to-postfix/",
+            "description": "Learn infix to postfix conversion using stacks",
+            "resource_type": "article",
+            "quality_score": 85
+        }
+    ],
+    "Queues": [
+        {
+            "title": "Queue Data Structure Tutorial",
+            "url": "https://www.geeksforgeeks.org/queue-data-structure/",
+            "description": "Comprehensive queue implementation guide",
+            "resource_type": "article",
+            "quality_score": 92
+        },
+        {
+            "title": "Queue Visualization",
+            "url": "https://www.cs.usfca.edu/~galles/visualization/QueueArray.html",
+            "description": "Interactive queue operations visualization",
+            "resource_type": "article",
+            "quality_score": 90
+        },
+        {
+            "title": "Priority Queue and Heaps",
+            "url": "https://www.programiz.com/dsa/priority-queue",
+            "description": "Learn priority queues and heap data structure",
+            "resource_type": "course",
+            "quality_score": 88
+        },
+        {
+            "title": "Circular Queue Implementation",
+            "url": "https://www.geeksforgeeks.org/circular-queue-set-1-introduction-array-implementation/",
+            "description": "Master circular queue implementation",
+            "resource_type": "article",
+            "quality_score": 85
+        }
+    ],
+    "Trees": [
+        {
+            "title": "Tree Data Structure Complete Guide",
+            "url": "https://www.geeksforgeeks.org/binary-tree-data-structure/",
+            "description": "Comprehensive tree data structure tutorial",
+            "resource_type": "article",
+            "quality_score": 92
+        },
+        {
+            "title": "Binary Tree Visualization",
+            "url": "https://www.cs.usfca.edu/~galles/visualization/BST.html",
+            "description": "Interactive binary tree operations",
+            "resource_type": "article",
+            "quality_score": 90
+        },
+        {
+            "title": "Tree Traversal Algorithms",
+            "url": "https://www.programiz.com/dsa/tree-traversal",
+            "description": "Master inorder, preorder, and postorder traversals",
+            "resource_type": "course",
+            "quality_score": 88
+        },
+        {
+            "title": "Binary Search Tree Operations",
+            "url": "https://www.geeksforgeeks.org/binary-search-tree-data-structure/",
+            "description": "Learn BST insertion, deletion, and search",
+            "resource_type": "article",
+            "quality_score": 85
+        }
+    ],
+    "Binary Trees": [
+        {
+            "title": "Binary Tree Problems and Solutions",
+            "url": "https://www.geeksforgeeks.org/binary-tree-data-structure/",
+            "description": "Comprehensive binary tree problem collection",
+            "resource_type": "article",
+            "quality_score": 92
+        },
+        {
+            "title": "Binary Tree LeetCode Problems",
+            "url": "https://leetcode.com/tag/binary-tree/",
+            "description": "Practice binary tree coding problems",
+            "resource_type": "course",
+            "quality_score": 90
+        },
+        {
+            "title": "Tree Height and Depth Algorithms",
+            "url": "https://www.geeksforgeeks.org/write-a-c-program-to-find-the-maximum-depth-or-height-of-a-tree/",
+            "description": "Learn to calculate tree height and depth",
+            "resource_type": "article",
+            "quality_score": 88
+        },
+        {
+            "title": "Lowest Common Ancestor",
+            "url": "https://www.geeksforgeeks.org/lowest-common-ancestor-binary-tree-set-1/",
+            "description": "Master LCA algorithms for binary trees",
+            "resource_type": "article",
+            "quality_score": 85
+        }
+    ],
+    "Graphs": [
+        {
+            "title": "Graph Data Structure and Algorithms",
+            "url": "https://www.geeksforgeeks.org/graph-data-structure-and-algorithms/",
+            "description": "Complete graph algorithms and implementations",
+            "resource_type": "article",
+            "quality_score": 92
+        },
+        {
+            "title": "Graph Traversal Visualization",
+            "url": "https://www.cs.usfca.edu/~galles/visualization/BFS.html",
+            "description": "Interactive BFS and DFS visualization",
+            "resource_type": "article",
+            "quality_score": 90
+        },
+        {
+            "title": "Shortest Path Algorithms",
+            "url": "https://www.programiz.com/dsa/dijkstra-algorithm",
+            "description": "Learn Dijkstra's and other shortest path algorithms",
+            "resource_type": "course",
+            "quality_score": 88
+        },
+        {
+            "title": "Graph Cycle Detection",
+            "url": "https://www.geeksforgeeks.org/detect-cycle-in-a-graph/",
+            "description": "Detect cycles in directed and undirected graphs",
+            "resource_type": "article",
+            "quality_score": 85
+        }
+    ],
+    "Dynamic Programming": [
+        {
+            "title": "Dynamic Programming Complete Guide",
+            "url": "https://www.geeksforgeeks.org/dynamic-programming/",
+            "description": "Master dynamic programming with patterns",
+            "resource_type": "article",
+            "quality_score": 92
+        },
+        {
+            "title": "DP Patterns for Coding Interviews",
+            "url": "https://leetcode.com/discuss/general-discussion/458695/dynamic-programming-patterns",
+            "description": "Common DP patterns and when to use them",
+            "resource_type": "article",
+            "quality_score": 90
+        },
+        {
+            "title": "Dynamic Programming - LeetCode",
+            "url": "https://leetcode.com/tag/dynamic-programming/",
+            "description": "Practice DP problems with detailed solutions",
+            "resource_type": "course",
+            "quality_score": 88
+        },
+        {
+            "title": "DP Optimization Techniques",
+            "url": "https://www.geeksforgeeks.org/overlapping-subproblems-property/",
+            "description": "Learn memoization and tabulation",
+            "resource_type": "article",
+            "quality_score": 85
+        }
+    ],
+    "Sorting Algorithms": [
+        {
+            "title": "Sorting Algorithms Complete Guide",
+            "url": "https://www.geeksforgeeks.org/sorting-algorithms/",
+            "description": "All sorting algorithms with complexity analysis",
+            "resource_type": "article",
+            "quality_score": 92
+        },
+        {
+            "title": "Sorting Algorithms Visualization",
+            "url": "https://www.sorting-algorithms.com/",
+            "description": "Interactive visualization of all sorting algorithms",
+            "resource_type": "article",
+            "quality_score": 90
+        },
+        {
+            "title": "Merge Sort vs Quick Sort",
+            "url": "https://www.geeksforgeeks.org/quick-sort-vs-merge-sort/",
+            "description": "Detailed comparison of major sorting algorithms",
+            "resource_type": "article",
+            "quality_score": 88
+        },
+        {
+            "title": "Counting Sort and Radix Sort",
+            "url": "https://www.geeksforgeeks.org/counting-sort/",
+            "description": "Non-comparison based sorting techniques",
+            "resource_type": "article",
+            "quality_score": 85
+        }
+    ],
+    "Searching Algorithms": [
+        {
+            "title": "Search Algorithms Complete Guide",
+            "url": "https://www.geeksforgeeks.org/searching-algorithms/",
+            "description": "All searching algorithms with implementations",
+            "resource_type": "article",
+            "quality_score": 92
+        },
+        {
+            "title": "Binary Search Mastery",
+            "url": "https://leetcode.com/explore/learn/card/binary-search/",
+            "description": "Master binary search and its variations",
+            "resource_type": "course",
+            "quality_score": 90
+        },
+        {
+            "title": "Binary Search Visualization",
+            "url": "https://www.cs.usfca.edu/~galles/visualization/Search.html",
+            "description": "Interactive binary search visualization",
+            "resource_type": "article",
+            "quality_score": 88
+        },
+        {
+            "title": "Advanced Search Techniques",
+            "url": "https://www.geeksforgeeks.org/ternary-search/",
+            "description": "Ternary search and other advanced techniques",
+            "resource_type": "article",
+            "quality_score": 85
+        }
+    ],
+    "Stacks": [
+        {
+            "title": "Stack Data Structure Guide",
+            "url": "https://www.geeksforgeeks.org/stack-data-structure/",
+            "description": "Complete stack implementation and applications",
+            "resource_type": "article",
+            "quality_score": 92
+        },
+        {
+            "title": "Stack Operations Visualization",
+            "url": "https://www.cs.usfca.edu/~galles/visualization/StackArray.html",
+            "description": "Interactive stack operations visualization",
+            "resource_type": "article",
+            "quality_score": 90
+        },
+        {
+            "title": "Stack Applications Tutorial",
+            "url": "https://www.programiz.com/dsa/stack",
+            "description": "Real-world stack applications and use cases",
+            "resource_type": "course",
+            "quality_score": 88
+        },
+        {
+            "title": "Expression Evaluation with Stacks",
+            "url": "https://www.geeksforgeeks.org/stack-set-2-infix-to-postfix/",
+            "description": "Learn infix to postfix conversion using stacks",
+            "resource_type": "article",
+            "quality_score": 85
+        }
+    ],
+    "Queues": [
+        {
+            "title": "Queue Data Structure Tutorial",
+            "url": "https://www.geeksforgeeks.org/queue-data-structure/",
+            "description": "Comprehensive queue implementation guide",
+            "resource_type": "article",
+            "quality_score": 92
+        },
+        {
+            "title": "Queue Visualization",
+            "url": "https://www.cs.usfca.edu/~galles/visualization/QueueArray.html",
+            "description": "Interactive queue operations visualization",
+            "resource_type": "article",
+            "quality_score": 90
+        },
+        {
+            "title": "Priority Queue and Heaps",
+            "url": "https://www.programiz.com/dsa/priority-queue",
+            "description": "Learn priority queues and heap data structure",
+            "resource_type": "course",
+            "quality_score": 88
+        },
+        {
+            "title": "Circular Queue Implementation",
+            "url": "https://www.geeksforgeeks.org/circular-queue-set-1-introduction-array-implementation/",
+            "description": "Master circular queue implementation",
+            "resource_type": "article",
+            "quality_score": 85
+        }
+    ],
+    "Trees": [
+        {
+            "title": "Tree Data Structure Complete Guide",
+            "url": "https://www.geeksforgeeks.org/binary-tree-data-structure/",
+            "description": "Comprehensive tree data structure tutorial",
+            "resource_type": "article",
+            "quality_score": 92
+        },
+        {
+            "title": "Binary Tree Visualization",
+            "url": "https://www.cs.usfca.edu/~galles/visualization/BST.html",
+            "description": "Interactive binary tree operations",
+            "resource_type": "article",
+            "quality_score": 90
+        },
+        {
+            "title": "Tree Traversal Algorithms",
+            "url": "https://www.programiz.com/dsa/tree-traversal",
+            "description": "Master inorder, preorder, and postorder traversals",
+            "resource_type": "course",
+            "quality_score": 88
+        },
+        {
+            "title": "Binary Search Tree Operations",
+            "url": "https://www.geeksforgeeks.org/binary-search-tree-data-structure/",
+            "description": "Learn BST insertion, deletion, and search",
+            "resource_type": "article",
+            "quality_score": 85
+        }
+    ],
+    "Binary Trees": [
+        {
+            "title": "Binary Tree Problems and Solutions",
+            "url": "https://www.geeksforgeeks.org/binary-tree-data-structure/",
+            "description": "Comprehensive binary tree problem collection",
+            "resource_type": "article",
+            "quality_score": 92
+        },
+        {
+            "title": "Binary Tree LeetCode Problems",
+            "url": "https://leetcode.com/tag/binary-tree/",
+            "description": "Practice binary tree coding problems",
+            "resource_type": "course",
+            "quality_score": 90
+        },
+        {
+            "title": "Tree Height and Depth Algorithms",
+            "url": "https://www.geeksforgeeks.org/write-a-c-program-to-find-the-maximum-depth-or-height-of-a-tree/",
+            "description": "Learn to calculate tree height and depth",
+            "resource_type": "article",
+            "quality_score": 88
+        },
+        {
+            "title": "Lowest Common Ancestor",
+            "url": "https://www.geeksforgeeks.org/lowest-common-ancestor-binary-tree-set-1/",
+            "description": "Master LCA algorithms for binary trees",
+            "resource_type": "article",
+            "quality_score": 85
+        }
+    ],
+    "Graphs": [
+        {
+            "title": "Graph Data Structure and Algorithms",
+            "url": "https://www.geeksforgeeks.org/graph-data-structure-and-algorithms/",
+            "description": "Complete graph algorithms and implementations",
+            "resource_type": "article",
+            "quality_score": 92
+        },
+        {
+            "title": "Graph Traversal Visualization",
+            "url": "https://www.cs.usfca.edu/~galles/visualization/BFS.html",
+            "description": "Interactive BFS and DFS visualization",
+            "resource_type": "article",
+            "quality_score": 90
+        },
+        {
+            "title": "Shortest Path Algorithms",
+            "url": "https://www.programiz.com/dsa/dijkstra-algorithm",
+            "description": "Learn shortest path algorithms like Dijkstra and Floyd-Warshall",
+            "resource_type": "article",
+            "quality_score": 85
+        }
+    ],
     # Design & Creative
     "Photoshop": [
         {

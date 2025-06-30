@@ -1,3 +1,7 @@
+#!/usr/bin/env python3
+"""
+Optimized backend server with lazy ML model loading
+"""
 import sys
 import os
 from dotenv import load_dotenv
@@ -12,9 +16,9 @@ from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 from app.routers import auth, skills, users, resources, progress, quiz, dashboard
-from app.routers import optimized_resources  # Import optimized resource router
 import uvicorn
 
+# Create FastAPI app
 app = FastAPI(
     title="SkillSprint API",
     description="AI-Powered Adaptive Learning Platform API",
@@ -39,34 +43,26 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Root endpoint for testing
+# Health check endpoint (fast response)
 @app.get("/")
-async def root():
-    return {
-        "status": "API is running", 
-        "message": "Welcome to SkillSprint AI-Powered Adaptive Learning Platform",
-        "version": "1.0.0",
-        "features": [
-            "AI-powered skill decomposition",
-            "Adaptive quiz generation",
-            "Collaborative filtering recommendations",
-            "Dynamic difficulty adjustment",
-            "Gamified progress tracking",
-            "Behavioral learning analytics"
-        ]
-    }
-
-# Health check endpoint
 @app.get("/health")
 async def health_check():
-    return {"status": "healthy", "timestamp": "2024-01-01T00:00:00Z"}
+    return {
+        "message": "SkillSprint API is running!",
+        "status": "healthy",
+        "version": "1.0.0"
+    }
+
+# Quick test endpoint for authentication
+@app.get("/auth/test")
+async def test_auth():
+    return {"message": "Auth endpoint is working"}
 
 # Include routers
 app.include_router(auth.router)
-app.include_router(users.router)
 app.include_router(skills.router)
-app.include_router(optimized_resources.router)  # Use optimized resources first (priority)
-app.include_router(resources.router)  # Keep legacy for backwards compatibility
+app.include_router(users.router)
+app.include_router(resources.router)
 app.include_router(progress.router)
 app.include_router(quiz.router)
 app.include_router(dashboard.router)
@@ -80,11 +76,13 @@ if __name__ == "__main__":
     print(f"🚀 Starting SkillSprint API server on {host}:{port}")
     print(f"📊 Debug mode: {debug}")
     print(f"🌐 Frontend URL: {frontend_url}")
+    print(f"🔐 Demo credentials: testuser / password123")
+    print(f"📖 API docs: http://{host}:{port}/docs")
     
     uvicorn.run(
-        "main:app",  # Use module:app format for reload to work properly
+        "main_optimized:app",
         host=host, 
         port=port,
         reload=debug,
-        log_level="debug" if debug else "info"
+        log_level="info"
     )

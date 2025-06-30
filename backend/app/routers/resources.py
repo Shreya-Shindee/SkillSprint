@@ -60,10 +60,11 @@ async def read_resources(
 async def search_resources(
     skill: str,
     limit: int = 10,
+    include_metrics: bool = False,
     db: Session = Depends(get_db),
     current_user: User = Depends(get_current_active_user)
 ):
-    """Search for resources by skill name with fast fallback"""
+    """Search for resources by skill name with fast fallback and optional performance metrics"""
     try:
         logger = logging.getLogger(__name__)
         logger.info(f"Searching resources for skill: {skill}")
@@ -71,10 +72,13 @@ async def search_resources(
         # Try fast fallback first for instant response
         try:
             from utils.fast_fallback import get_fast_fallback_resources
+            from utils.enhanced_uniqueness import ensure_resource_uniqueness_and_quality, get_performance_metrics
+            
             fast_resources = get_fast_fallback_resources(skill)
             if fast_resources:
                 logger.info(f"Fast fallback found {len(fast_resources)} resources for {skill}")
-                resources = fast_resources[:limit]
+                # Apply enhanced uniqueness filtering
+                resources = ensure_resource_uniqueness_and_quality(fast_resources, skill, limit)
             else:
                 # No fast fallback, try basic search
                 from utils.resource_search import get_resources_for_skill
@@ -92,11 +96,18 @@ async def search_resources(
         
         logger.info(f"Returning {len(resources)} resources for {skill}")
         
-        return {
+        response_data = {
             "resources": resources,
             "total": len(resources),
             "skill": skill
         }
+        
+        # Add performance metrics if requested
+        if include_metrics:
+            from utils.enhanced_uniqueness import get_performance_metrics
+            response_data["performance_metrics"] = get_performance_metrics(resources)
+        
+        return response_data
         
     except Exception as e:
         logger.error(f"Error searching resources for {skill}: {str(e)}")
@@ -135,18 +146,64 @@ async def get_learning_path_with_resources(
         logger = logging.getLogger(__name__)
         logger.info(f"Generating learning path for: {skill_name}")
         
-        # Import the enhanced resource search
-        from utils.enhanced_resource_search import get_enhanced_resources_with_path
+        # Use the improved resource search with enhanced uniqueness
+        from utils.resource_search import get_resources_for_skill
+        from utils.enhanced_uniqueness import ensure_resource_uniqueness_and_quality, get_specialized_resources_for_subskill, get_performance_metrics
+        from ml.skill_decomposition import decompose_skill
         
-        # Get enhanced resources and learning path
-        learning_data = await get_enhanced_resources_with_path(skill_name)
+        # Get skill decomposition for learning path structure
+        try:
+            skill_breakdown = decompose_skill(skill_name)
+            subskills = skill_breakdown.get('subskills', [skill_name])
+        except Exception as e:
+            logger.warning(f"Skill decomposition failed: {e}")
+            subskills = [skill_name]
+        
+        # Generate learning path with unique resources for each subskill
+        learning_path = []
+        all_resources = []
+        
+        for i, subskill in enumerate(subskills[:5]):  # Limit to 5 subskills for performance
+            # Get specialized resources for this specific subskill
+            specialized = get_specialized_resources_for_subskill(subskill)
+            general = get_resources_for_skill(subskill, max_per_type=4)  # Increased for more resources
+            
+            # Combine and ensure uniqueness - QUALITY FOCUS: More resources per subskill
+            subskill_resources = specialized + general
+            unique_subskill_resources = ensure_resource_uniqueness_and_quality(
+                subskill_resources, subskill, max_resources=8  # Doubled for comprehensive learning
+            )
+            
+            phase = {
+                "name": f"Phase {i+1}: {subskill}",
+                "description": f"Master {subskill} fundamentals and practice",
+                "duration": "1-2 weeks",
+                "resources": unique_subskill_resources,
+                "quiz_topics": [subskill],
+                "order": i + 1
+            }
+            learning_path.append(phase)
+            all_resources.extend(unique_subskill_resources)
+        
+        # Ensure overall uniqueness across all phases - increased total resources
+        final_resources = ensure_resource_uniqueness_and_quality(
+            all_resources, skill_name, max_resources=40  # Doubled for comprehensive coverage
+        )
+        
+        # Calculate performance metrics for quality assurance
+        performance_metrics = get_performance_metrics(final_resources)
         
         return {
             "skill": skill_name,
-            "learning_path": learning_data["learning_path"],
-            "resources": learning_data["resources"],
-            "total_resources": learning_data["total_resources"],
-            "estimated_duration": learning_data["estimated_duration"]
+            "learning_path": {
+                "phases": learning_path,
+                "total_phases": len(learning_path),
+                "total_duration": f"{len(learning_path)*2} weeks"
+            },
+            "resources": final_resources,
+            "total_resources": len(final_resources),
+            "estimated_duration": f"{len(learning_path)*2} weeks",
+            "quality_metrics": performance_metrics
         }
         
     except Exception as e:

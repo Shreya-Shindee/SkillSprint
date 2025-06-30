@@ -10,6 +10,8 @@ import re
 import logging
 from .curated_resources import get_curated_resources, calculate_resource_quality
 from .fast_fallback import get_fast_fallback_resources
+from .enhanced_uniqueness import ensure_resource_uniqueness_and_quality, get_specialized_resources_for_subskill
+from .robust_resource_fetcher import get_robust_resources
 
 # Set up logging
 logging.basicConfig(level=logging.INFO)
@@ -27,8 +29,24 @@ HEADERS = {
 }
 
 # Timeout settings for faster response
-REQUEST_TIMEOUT = 3  # Reduced from default to speed up responses
+REQUEST_TIMEOUT = 2  # Reduced from 3 to 2 seconds for faster response
 MAX_RETRIES = 1      # Reduced retries for faster response
+
+# Resource caching for improved performance
+_resource_cache = {}
+CACHE_EXPIRY = 3600  # 1 hour cache
+
+def get_cached_resources(cache_key):
+    """Get resources from cache if available and not expired"""
+    if cache_key in _resource_cache:
+        cached_data, timestamp = _resource_cache[cache_key]
+        if time.time() - timestamp < CACHE_EXPIRY:
+            return cached_data
+    return None
+
+def cache_resources(cache_key, resources):
+    """Cache resources with timestamp"""
+    _resource_cache[cache_key] = (resources, time.time())
 
 def extract_youtube_metadata(soup, video_id=None):
     """
@@ -184,7 +202,7 @@ def get_youtube_videos(query, max_results=3):
 
 def get_articles(query, max_results=3):
     """
-    Search for articles related to the query.
+    Search for articles related to the query with improved rate limiting handling.
     
     Args:
         query (str): Search query
@@ -194,69 +212,168 @@ def get_articles(query, max_results=3):
         list: List of dictionaries containing article title, URL, and description
     """
     try:
-        # Construct the search URL for DuckDuckGo (more privacy-friendly)
-        search_query = query.replace(' ', '+')
-        url = f"https://html.duckduckgo.com/html/?q={search_query}+tutorial"
-          # Send request with timeout
-        response = requests.get(url, headers=HEADERS, timeout=REQUEST_TIMEOUT)
-        if response.status_code != 200:
-            logger.warning(f"Failed to fetch DuckDuckGo results: {response.status_code}")
-            return []
+        # Multiple search strategies to avoid rate limiting
+        search_strategies = [
+            ("https://html.duckduckgo.com/html/?q={query}+tutorial", "DuckDuckGo"),
+            ("https://www.bing.com/search?q={query}+tutorial", "Bing"),
+            ("https://startpage.com/sp/search?q={query}+tutorial", "Startpage")
+        ]
         
-        # Parse with BeautifulSoup
-        soup = BeautifulSoup(response.text, 'html.parser')
-        
-        # Extract article information
-        articles = []
-        
-        # Find all result elements
-        result_elements = soup.select('.result')
-        
-        for element in result_elements:
-            title_element = element.select_one('.result__a')
-            snippet_element = element.select_one('.result__snippet')
-            
-            if title_element and title_element.has_attr('href'):
-                href = title_element['href']
+        for url_template, engine_name in search_strategies:
+            try:
+                # Construct the search URL
+                search_query = query.replace(' ', '+')
+                url = url_template.format(query=search_query)
                 
-                # Extract the actual URL from DuckDuckGo redirect URL
-                actual_url = href
-                if 'uddg=' in href:
-                    actual_url = requests.utils.unquote(href.split('uddg=')[1].split('&')[0])
-                title = title_element.get_text().strip()
-                description = snippet_element.get_text().strip() if snippet_element else f"Article about {query}"
+                # Add random delay to avoid rate limiting
+                time.sleep(random.uniform(0.5, 1.5))
                 
-                # Skip YouTube results (we already have a YouTube function)
-                if 'youtube.com' in actual_url:
+                # Send request with timeout
+                response = requests.get(url, headers=HEADERS, timeout=REQUEST_TIMEOUT)
+                if response.status_code == 202:
+                    logger.warning(f"{engine_name} returned 202 (rate limited), trying next engine")
                     continue
+                elif response.status_code != 200:
+                    logger.warning(f"Failed to fetch {engine_name} results: {response.status_code}")
+                    continue
+                
+                # Parse with BeautifulSoup
+                soup = BeautifulSoup(response.text, 'html.parser')
+                articles = []
+                
+                # Engine-specific parsing
+                if engine_name == "DuckDuckGo":
+                    articles = _parse_duckduckgo_results(soup, query, max_results)
+                elif engine_name == "Bing":
+                    articles = _parse_bing_results(soup, query, max_results)
+                elif engine_name == "Startpage":
+                    articles = _parse_startpage_results(soup, query, max_results)
+                
+                if articles:
+                    logger.info(f"Successfully got {len(articles)} articles from {engine_name}")
+                    return articles
                     
-                # Skip advertisement results
-                if 'ad_domain' in href or '/y.js?' in href:
-                    continue
-                
-                # Calculate quality score
-                quality_score = calculate_resource_quality(
-                    title, description, actual_url, domain_bonus=True
-                )
-                
-                articles.append({
-                    'title': title,
-                    'url': actual_url,
-                    'description': description,
-                    'resource_type': 'article',
-                    'quality_score': quality_score
-                })
-                
-                if len(articles) >= max_results:
-                    break
-        return articles[:max_results]
+            except requests.exceptions.Timeout:
+                logger.warning(f"{engine_name} search timed out for query: {query}")
+                continue
+            except Exception as e:
+                logger.error(f"Error with {engine_name} search: {str(e)}")
+                continue
         
-    except requests.exceptions.Timeout:
-        logger.warning(f"Article search timed out for query: {query}")
+        # If all engines fail, return empty list
+        logger.warning(f"All search engines failed for query: {query}")
         return []
+        
     except Exception as e:
-        logger.error(f"Error fetching articles: {str(e)}")
+        logger.error(f"Error in get_articles: {str(e)}")
         return []
+
+def _parse_duckduckgo_results(soup, query, max_results):
+    """Parse DuckDuckGo search results."""
+    articles = []
+    result_elements = soup.select('.result')
+    
+    for element in result_elements:
+        title_element = element.select_one('.result__a')
+        snippet_element = element.select_one('.result__snippet')
+        
+        if title_element and title_element.has_attr('href'):
+            href = title_element['href']
+            
+            # Extract the actual URL from DuckDuckGo redirect URL
+            actual_url = href
+            if 'uddg=' in href:
+                actual_url = requests.utils.unquote(href.split('uddg=')[1].split('&')[0])
+            title = title_element.get_text().strip()
+            description = snippet_element.get_text().strip() if snippet_element else f"Article about {query}"
+            
+            # Skip YouTube results and ads
+            if 'youtube.com' in actual_url or 'ad_domain' in href or '/y.js?' in href:
+                continue
+            
+            # Calculate quality score
+            quality_score = calculate_resource_quality(
+                title, description, actual_url, domain_bonus=True
+            )
+            
+            articles.append({
+                'title': title,
+                'url': actual_url,
+                'description': description,
+                'resource_type': 'article',
+                'quality_score': quality_score
+            })
+            
+            if len(articles) >= max_results:
+                break
+    
+    return articles
+
+def _parse_bing_results(soup, query, max_results):
+    """Parse Bing search results."""
+    articles = []
+    result_elements = soup.select('li.b_algo')
+    
+    for element in result_elements:
+        title_element = element.select_one('h2 a')
+        snippet_element = element.select_one('.b_caption p')
+        
+        if title_element:
+            title = title_element.get_text().strip()
+            url = title_element.get('href', '')
+            description = snippet_element.get_text().strip() if snippet_element else f"Article about {query}"
+            
+            # Skip YouTube results
+            if 'youtube.com' in url:
+                continue
+            
+            quality_score = calculate_resource_quality(title, description, url, domain_bonus=True)
+            
+            articles.append({
+                'title': title,
+                'url': url,
+                'description': description,
+                'resource_type': 'article',
+                'quality_score': quality_score
+            })
+            
+            if len(articles) >= max_results:
+                break
+    
+    return articles
+
+def _parse_startpage_results(soup, query, max_results):
+    """Parse Startpage search results."""
+    articles = []
+    result_elements = soup.select('.w-gl__result')
+    
+    for element in result_elements:
+        title_element = element.select_one('h3 a')
+        snippet_element = element.select_one('.w-gl__description')
+        
+        if title_element:
+            title = title_element.get_text().strip()
+            url = title_element.get('href', '')
+            description = snippet_element.get_text().strip() if snippet_element else f"Article about {query}"
+            
+            # Skip YouTube results
+            if 'youtube.com' in url:
+                continue
+            
+            quality_score = calculate_resource_quality(title, description, url, domain_bonus=True)
+            
+            articles.append({
+                'title': title,
+                'url': url,
+                'description': description,
+                'resource_type': 'article',
+                'quality_score': quality_score
+            })
+            
+            if len(articles) >= max_results:
+                break
+    
+    return articles
 
 def get_github_repos(query, max_results=3):
     """
@@ -322,22 +439,34 @@ def get_github_repos(query, max_results=3):
         logger.error(f"Error fetching GitHub repos: {str(e)}")
         return []
 
-def get_resources_for_skill(skill_name, resource_types=None, max_per_type=2):
+def get_resources_for_skill(skill_name, resource_types=None, max_per_type=4):
     """
     Get high-quality resources for a skill, prioritizing subskill-specific content and quality scores.
+    Now focuses on QUALITY over speed - fetches more resources per subskill.
     
     Args:
         skill_name (str): Name of the skill
         resource_types (list): List of resource types to search for (default: all types)
-        max_per_type (int): Maximum number of resources per type
+        max_per_type (int): Maximum number of resources per type (increased default for quality)
         
     Returns:
         list: List of high-quality resource dictionaries, sorted by quality score
     """
+    # Check cache first
+    cache_key = f"{skill_name}_{max_per_type}"
+    cached_result = get_cached_resources(cache_key)
+    if cached_result:
+        logger.info(f"Returning cached resources for {skill_name}")
+        return cached_result
+    
     if resource_types is None:
-        resource_types = ['video', 'article', 'github', 'course', 'documentation']
+        # Extended list of resource types for maximum diversity
+        resource_types = ['documentation', 'video', 'course', 'article', 'github', 'tutorial']
 
     all_resources = []
+    
+    # Increased target total for more comprehensive resources
+    target_total = len(resource_types) * max_per_type * 2  # Fetch double to ensure quality filtering works
     
     # Enhanced subskill detection - check for exact subskill matches first
     skill_lower = skill_name.lower().strip()
@@ -414,11 +543,22 @@ def get_resources_for_skill(skill_name, resource_types=None, max_per_type=2):
     matched_subskill = SUBSKILL_MAPPING.get(skill_lower)
     if matched_subskill:
         logger.info(f"Found specific subskill match: '{skill_name}' -> '{matched_subskill}'")
-        # Get specific subskill resources from fast fallback
+        
+        # First, get specialized resources for maximum uniqueness
+        specialized_resources = get_specialized_resources_for_subskill(matched_subskill)
+        if specialized_resources:
+            all_resources.extend(specialized_resources)
+            logger.info(f"Added {len(specialized_resources)} specialized resources for {matched_subskill}")
+        
+        # Then get additional subskill resources from fast fallback
         subskill_resources = get_fast_fallback_resources(matched_subskill)
         if subskill_resources:
             all_resources.extend(subskill_resources)
-            logger.info(f"Added {len(subskill_resources)} specialized resources for {matched_subskill}")
+            logger.info(f"Added {len(subskill_resources)} fallback resources for {matched_subskill}")
+    
+    # Apply enhanced uniqueness and quality filtering
+    if all_resources:
+        all_resources = ensure_resource_uniqueness_and_quality(all_resources, skill_name, target_total)
     
     # Special handling for main DSA skills - only add Striver's DSA Sheet for main DSA searches, not subskills
     dsa_main_terms = ['data structure and algorithm', 'data structures and algorithms', 'dsa', 'algorithms and data structures']
@@ -456,9 +596,6 @@ def get_resources_for_skill(skill_name, resource_types=None, max_per_type=2):
                     )
                 all_resources.append(resource)
     
-    # Calculate target total early
-    target_total = len(resource_types) * max_per_type
-    
     # Step 1.5: Always try fast fallback first for speed
     fallback_resources = get_fast_fallback_resources(skill_name)
     if fallback_resources:
@@ -473,42 +610,92 @@ def get_resources_for_skill(skill_name, resource_types=None, max_per_type=2):
     else:
         skip_additional_search = False
     
-    # Step 2: If we need more resources, search for high-quality ones
+    # Step 2: QUALITY OVER SPEED - Search comprehensively for high-quality resources
     
     if not skip_additional_search and len(all_resources) < target_total:
-        logger.info(f"Searching for additional resources for {skill_name}")
+        logger.info(f"Comprehensive search for QUALITY resources for {skill_name}")
         
-        # Use only ONE search term to speed up response
-        search_term = f"{skill_name} tutorial"
+        # Comprehensive search terms for maximum quality and variety
+        search_terms = [
+            f"{skill_name} complete guide",
+            f"{skill_name} tutorial",
+            f"{skill_name} documentation", 
+            f"{skill_name} examples",
+            f"{skill_name} masterclass",
+            f"{skill_name} course",
+            f"{skill_name} best practices"
+        ]
         
-        # Search for each resource type (limited to avoid timeouts)
-        for resource_type in resource_types:
-            if len([r for r in all_resources if r.get('resource_type') == resource_type]) >= max_per_type:
-                continue  # Already have enough of this type
+        # Prioritize resource types we don't have enough of
+        current_type_counts = {}
+        for resource in all_resources:
+            rtype = resource.get('resource_type', 'unknown')
+            current_type_counts[rtype] = current_type_counts.get(rtype, 0) + 1
+        
+        # Order resource types by priority (least represented first)
+        type_priority = sorted(resource_types, key=lambda t: current_type_counts.get(t, 0))
+        
+        # Search for each resource type with focus on diversity and quality
+        for resource_type in type_priority:
+            current_count = current_type_counts.get(resource_type, 0)
+            if current_count >= max_per_type * 2:  # Allow more resources for quality filtering
+                continue
                 
             type_resources = []
+            needed = (max_per_type * 2) - current_count  # Fetch extra for quality filtering
             
-            # Only one search query per type for speed
-            try:
-                if resource_type == 'video':
-                    results = get_youtube_videos(search_term, max_per_type)
-                elif resource_type == 'article':
-                    results = get_articles(search_term, max_per_type)
-                elif resource_type == 'github':
-                    results = get_github_repos(search_term, max_per_type)
-                else:
+            # Try multiple search terms for comprehensive coverage
+            for search_term in search_terms[:4]:  # Use more search terms for quality
+                if len(type_resources) >= needed:
+                    break
+                    
+                try:
+                    if resource_type == 'video':
+                        results = get_youtube_videos(search_term, max(3, needed//2))
+                    elif resource_type == 'article':
+                        results = get_articles(search_term, max(3, needed//2))
+                    elif resource_type == 'github':
+                        results = get_github_repos(search_term, max(3, needed//2))
+                    elif resource_type == 'documentation':
+                        # Search for documentation specifically
+                        doc_search = f"{search_term} documentation official"
+                        results = get_articles(doc_search, max(3, needed//2))
+                        # Mark as documentation type
+                        for r in results:
+                            if 'docs.' in r['url'] or '/doc' in r['url'] or 'documentation' in r['title'].lower():
+                                r['resource_type'] = 'documentation'
+                                r['quality_score'] = r.get('quality_score', 70) + 10  # Bonus for docs
+                    elif resource_type == 'tutorial':
+                        # Search for tutorials specifically  
+                        tutorial_search = f"{search_term} step by step complete"
+                        results = get_articles(tutorial_search, max(3, needed//2))
+                        # Mark as tutorial type
+                        for r in results:
+                            if 'tutorial' in r['title'].lower() or 'step' in r['title'].lower():
+                                r['resource_type'] = 'tutorial'
+                                r['quality_score'] = r.get('quality_score', 70) + 5  # Bonus for tutorials
+                    elif resource_type == 'course':
+                        # Search for courses specifically
+                        course_search = f"{search_term} course complete training"
+                        results = get_articles(course_search, max(3, needed//2))
+                        # Mark as course type
+                        for r in results:
+                            if any(word in r['title'].lower() for word in ['course', 'training', 'bootcamp', 'certification']):
+                                r['resource_type'] = 'course'
+                                r['quality_score'] = r.get('quality_score', 70) + 8  # Bonus for courses
+                    else:
+                        continue
+                    
+                    # Filter out duplicates and add to type_resources
+                    existing_urls = {r['url'] for r in all_resources + type_resources}
+                    for result in results:
+                        if result['url'] not in existing_urls and len(type_resources) < needed:
+                            type_resources.append(result)
+                            existing_urls.add(result['url'])
+                            
+                except Exception as e:
+                    logger.error(f"Error searching for {resource_type} resources: {e}")
                     continue
-                
-                # Filter out duplicates and add to type_resources
-                existing_urls = {r['url'] for r in all_resources + type_resources}
-                for result in results:
-                    if result['url'] not in existing_urls and len(type_resources) < max_per_type:
-                        type_resources.append(result)
-                        existing_urls.add(result['url'])
-                        
-            except Exception as e:
-                logger.error(f"Error searching for {resource_type} resources: {e}")
-                continue
             
             # Sort type_resources by quality score and take the best ones
             type_resources.sort(key=lambda x: x.get('quality_score', 0), reverse=True)
@@ -543,14 +730,31 @@ def get_resources_for_skill(skill_name, resource_types=None, max_per_type=2):
             
             if len(final_resources) >= target_total:
                 break
-      # If we don't have enough resources, use fast fallback
+    # If we don't have enough resources, use robust fetcher as additional fallback
+    if len(final_resources) < target_total // 2:
+        logger.info(f"Using robust fetcher as fallback for {skill_name}")
+        try:
+            robust_resources = get_robust_resources(skill_name, resource_types, max_per_type=3)
+            if robust_resources:
+                final_resources.extend(robust_resources)
+                logger.info(f"Added {len(robust_resources)} resources from robust fetcher")
+        except Exception as e:
+            logger.error(f"Robust fetcher failed for {skill_name}: {e}")
+    
+    # If we still don't have enough resources, use fast fallback
     if len(final_resources) < 2:
         logger.info(f"Using fast fallback resources for {skill_name}")
         fallback_resources = get_fast_fallback_resources(skill_name)
         if fallback_resources:
             final_resources.extend(fallback_resources)
     
-    logger.info(f"Returning {len(final_resources)} high-quality resources for {skill_name}")
+    # Final step: Apply enhanced uniqueness and quality filtering to all resources
+    final_resources = ensure_resource_uniqueness_and_quality(all_resources, skill_name, target_total)
+    
+    # Cache the results for future requests
+    cache_resources(cache_key, final_resources)
+    
+    logger.info(f"Returning {len(final_resources)} unique, high-quality resources for {skill_name}")
     return final_resources
 
 def get_default_resources(skill_name):
